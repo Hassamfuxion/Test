@@ -40,6 +40,8 @@ import Contact from './Contact'; // Contact page component
 
 import Loader from './loader.js';
 import Services from "./serviceicon.js";
+import BenefitsSection from "./servicemain.js";
+
 
 const SSConsultant = () => {
   return (
@@ -337,10 +339,15 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Start dexon Service Section  */}
   {/*==================================================*/}
+
+
+
   <div
   className="service-section style-two"
   style={{ background: 'linear-gradient(to right, blue, black)' }}
 >
+
+<BenefitsSection></BenefitsSection>
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
