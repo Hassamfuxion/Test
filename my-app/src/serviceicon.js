@@ -21,7 +21,7 @@ const Services = () => {
           <div className="col-lg-4" key={index}>
             <ServiceCard>
               <div className="card">
-                <div className="border-animation"></div> {/* Animated border effect */}
+                <div className="loading-bar"></div> {/* Moving Progress Bar */}
                 <div className="content">
                   <div className="service-icon">
                     <img src={`assets/images/resource/${service.icon}`} alt={service.title} />
@@ -73,8 +73,8 @@ const ServiceCard = styled.div`
     background: transparent; /* On hover, background becomes transparent */
   }
 
-  /* Animated border effect */
-  .border-animation {
+  /* Moving Progress Bar */
+  .loading-bar {
     position: absolute;
     top: 0;
     left: 0;
@@ -82,16 +82,16 @@ const ServiceCard = styled.div`
     height: 100%;
     border-radius: var(--rounded);
     border: 4px solid transparent;
-    background: linear-gradient(45deg, #fff, #fff, #fff, #fff);
+    background: linear-gradient(90deg, #ffffff, #00ccff, #0066ff, #ffffff);
     background-size: 300% 300%;
     -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
     -webkit-mask-composite: destination-out;
     mask-composite: exclude;
-    animation: borderProgress 3s linear infinite;
+    animation: loadingProgress 3s linear infinite;
   }
 
-  @keyframes borderProgress {
+  @keyframes loadingProgress {
     0% {
       background-position: 0% 50%;
     }
