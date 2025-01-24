@@ -21,6 +21,7 @@ const Services = () => {
           <div className="col-lg-4" key={index}>
             <ServiceCard>
               <div className="card">
+                <div className="border-animation"></div> {/* Animated border effect */}
                 <div className="content">
                   <div className="service-icon">
                     <img src={`assets/images/resource/${service.icon}`} alt={service.title} />
@@ -41,7 +42,6 @@ const Services = () => {
 
 const ServicesContainer = styled.div`
   padding: 50px 20px;
-  color: white;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -63,41 +63,43 @@ const ServiceCard = styled.div`
     justify-content: center;
     position: relative;
     padding: var(--border);
-    background: rgba(255, 255, 255, 0.1);
+    background: black; /* Default background is black */
     backdrop-filter: blur(10px);
     transition: all 0.3s ease-in-out;
     overflow: hidden;
-    position: relative;
-    background: linear-gradient(45deg, #00ccb1, #5ddcff, #3c67e3, #4e00c2); /* Gradient background */
   }
 
-  /* This will change the card's background gradient on hover */
   .card:hover {
-    background: linear-gradient(45deg, #a2c2ff, #0054a6); /* Light blue and dark blue gradient on hover */
+    background: transparent; /* On hover, background becomes transparent */
   }
 
-  .card::before {
-    content: "";
+  /* Animated border effect */
+  .border-animation {
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-size: 400% 400%;
+    width: 100%;
+    height: 100%;
     border-radius: var(--rounded);
-    animation: gradientBorder 3s linear infinite;
-    z-index: -1;
+    border: 4px solid transparent;
+    background: linear-gradient(45deg, #fff, #fff, #fff, #fff);
+    background-size: 300% 300%;
+    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude;
+    animation: borderProgress 3s linear infinite;
   }
 
-  @keyframes gradientBorder {
+  @keyframes borderProgress {
     0% {
-      background-position: 0 0;
+      background-position: 0% 50%;
     }
     50% {
-      background-position: 100% 100%;
+      background-position: 100% 50%;
     }
     100% {
-      background-position: 0 0;
+      background-position: 0% 50%;
     }
   }
 
@@ -115,9 +117,13 @@ const ServiceCard = styled.div`
     justify-content: center;
   }
 
+  .card:hover .content {
+    background: transparent; /* When hovered, the content also becomes transparent */
+  }
+
   .service-icon {
-    width: 80px; /* Increase size of the icon */
-    height: 80px; /* Increase size of the icon */
+    width: 80px;
+    height: 80px;
     margin-bottom: 15px;
     display: flex;
     align-items: center;
