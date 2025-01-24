@@ -549,7 +549,7 @@ const SSConsultant = () => {
           <div className="col-lg-12">
             <div className="single-service-box2">
               <div className="service-icon">
-                <img src="assets/images/resource/icon30.gif" alt="" />
+                <img src="assets/images/resource/icongif30.gif" alt="" />
               </div>
               <div className="service-content">
                 <h2 className="service-title">Perfect Packaging</h2>
