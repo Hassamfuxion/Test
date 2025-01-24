@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 const BenefitsSection = () => {
-  const [scrollY, setScrollY] = useState(0);
   const [showText, setShowText] = useState(false);
 
   useEffect(() => {
@@ -12,13 +11,10 @@ const BenefitsSection = () => {
         const top = section.getBoundingClientRect().top;
         const windowHeight = window.innerHeight;
 
-        // Show text when scrolled into view
-        if (top < windowHeight - 100) {
-          setShowText(true);
+        if (top < windowHeight - 100 && top > 0) {
+          setShowText(false);
+          setTimeout(() => setShowText(true), 150);
         }
-
-        // Adjust gradient position based on scroll
-        setScrollY(window.scrollY / 2);
       }
     };
 
@@ -27,15 +23,13 @@ const BenefitsSection = () => {
   }, []);
 
   return (
-    <Section id="benefits-section" scrollY={scrollY}>
-      <GradientOverlay scrollY={scrollY} />
+    <Section id="benefits-section">
+      <GradientOverlay />
       <Container>
         <TextWrapper className={showText ? "visible" : ""}>
-          <h1 className="typewriter">What Benefits Do You Gain</h1>
-          <h1 className="typewriter">From Our ERP Solutions?</h1>
-          <p>
-            <span>Supply exceptional services, integrating markets and initiatives.</span>
-          </p>
+          <h1 className={showText ? "typewriter" : ""}>What Benefits Do You Gain</h1>
+          <h1 className={showText ? "typewriter" : ""}>From Our ERP Solutions?</h1>
+          <p>Supply exceptional services, integrating markets and initiatives.</p>
           <Description>
             SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, 
             FOCUS. Tailored for large, medium, and small-sized manufacturing and service industries, 
@@ -65,27 +59,25 @@ const Section = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   text-align: center;
-  padding: 50px 20px;
-  transition: all 0.5s ease-in-out;
-  filter: ${({ scrollY }) => `blur(${scrollY / 50}px)`}; /* Blur effect based on scroll */
+  padding: 80px 20px; /* Increased padding for better layout */
+  transition: all 0.6s ease-in-out;
 `;
 
 const GradientOverlay = styled.div`
   position: absolute;
   bottom: 0;
   width: 100%;
-  height: 150px;
+  height: 180px; /* Increased height for a smoother effect */
   background: linear-gradient(to top, black, transparent);
-  transform: ${({ scrollY }) => `translateY(${scrollY * 0.5}px)`}; /* Parallax gradient effect */
-  transition: transform 0.3s ease-in-out;
 `;
 
 const Container = styled.div`
-  max-width: 800px;
+  max-width: 900px;
   z-index: 2;
-  transition: all 0.5s ease-in-out;
+  padding: 30px; /* Added padding for better spacing */
+  transition: all 0.6s ease-in-out;
 `;
 
 const fadeIn = keyframes`
@@ -102,47 +94,49 @@ const TextWrapper = styled.div`
   color: white;
   opacity: 0;
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+  padding: 20px; /* Added padding for smooth spacing */
 
   &.visible {
     opacity: 1;
-    animation: ${fadeIn} 1s ease-out forwards;
+    animation: ${fadeIn} 1.2s ease-out forwards;
   }
 
   .typewriter {
-    font-size: 2rem;
+    font-size: 2.2rem;
     overflow: hidden;
     white-space: nowrap;
-    border-right: 2px solid white;
     width: 0;
     display: inline-block;
-    animation: ${typewriter} 2s steps(40, end) forwards;
+    padding-bottom: 10px; /* Added spacing between lines */
+    animation: ${typewriter} 2s ease-out forwards;
   }
 
-  p span {
-    font-size: 14px;
-    display: block;
-    margin-top: 10px;
+  p {
+    font-size: 16px;
+    margin-top: 15px;
   }
 `;
 
 const Description = styled.p`
-  font-size: 16px;
-  margin-top: 15px;
-  line-height: 1.6;
+  font-size: 18px;
+  margin-top: 20px;
+  line-height: 1.7;
+  padding: 10px; /* Improved text readability */
 `;
 
 const Thumbnail = styled.div`
-  margin-top: 20px;
+  margin-top: 25px;
   img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 10px;
+    padding: 10px; /* Better spacing around the image */
   }
 `;
 
 const Icon = styled.div`
-  margin-top: 20px;
-  font-size: 24px;
+  margin-top: 25px;
+  font-size: 26px;
   a {
     color: white;
     transition: transform 0.3s;

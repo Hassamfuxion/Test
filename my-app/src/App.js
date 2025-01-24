@@ -352,30 +352,7 @@ const SSConsultant = () => {
     <div className="row">
       <div className="col-lg-12">
 
-      <div className="dexon-section-title white padding-lg text-left">
-  <h1>What Benefits Do You Gain</h1>
-  <h1>From Our ERP Solutions?</h1>
-  <p>
-    <span style={{ color: 'white', fontSize: '14px' }}>
-      Supply exceptional services, integrating markets and initiatives.
-    </span>
-  </p>
-  <div className="dexon-desc">
-          <p>
-          SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process. 
-          Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.
-          </p>
-        </div>
-        <div className="serivce-thumb">
-      <img src="assets/images/resource/servc-thumb.png" alt="" />
-    </div>
-    <div className="services-icon">
-          <a href="./service">
-            <i className="bi bi-arrow-right-short" />
-          </a>
-        </div>
-</div>
-
+   
 
        
       </div>
