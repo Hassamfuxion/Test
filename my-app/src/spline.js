@@ -1,52 +1,70 @@
-import React, { useState, useEffect } from 'react';
-import Spline from '@splinetool/react-spline';
-
-export default function SplineComponent() {
-  const [isLoaded, setIsLoaded] = useState(false); // For lazy loading the scene
-  const [isVisible, setIsVisible] = useState(false); // For showing/hiding the scene based on scroll
-
-  // Handle scroll to toggle visibility of Spline scene
-  useEffect(() => {
-    const handleScroll = () => {
-      const rect = document.getElementById('spline-container')?.getBoundingClientRect();
-      if (rect && rect.top < window.innerHeight && rect.bottom > 0) {
-        setIsVisible(true); // Show the scene when it's in view
-      } else {
-        setIsVisible(false); // Hide the scene when it's out of view
-      }
-    };
-
-    // Initial check and event listener for scroll
-    handleScroll();
-    window.addEventListener('scroll', handleScroll);
-
-    return () => window.removeEventListener('scroll', handleScroll); // Clean up the event listener
-  }, []);
-
+export default function HeroSection() {
   return (
     <div
-      id="spline-container"
       style={{
         width: '100%',
         height: '100vh',
-        backgroundColor: '#000',
-        overflow: 'hidden',
-        visibility: isVisible ? 'visible' : 'hidden', // Toggle visibility on scroll
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        textAlign: 'center',
         position: 'relative',
+        overflow: 'hidden',
+        background: 'url("/assets/images/resource/Hero.jpg") no-repeat center center/cover',
       }}
     >
-      {isVisible && (
-        <Spline
-          scene="https://prod.spline.design/4XAEuV-P5MuSPZcg/scene.splinecode" // Add your scene link here
-          onLoad={() => setIsLoaded(true)} // Set the state when it's loaded
-          onError={(error) => console.error('Error loading spline scene:', error)} // Handle error if any
+      {/* Overlay Effect */}
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '100%',
+          top: '0',
+          left: '0',
+          background: 'rgba(0, 0, 0, 0.5)', // Dark overlay effect
+        }}
+      ></div>
+
+      {/* Hero Content */}
+      <h1 style={{ fontSize: '3rem', fontWeight: 'bold', maxWidth: '800px', color: '#fff', zIndex: '1' }}>
+        Your Automation Partner
+      </h1>
+      <p style={{ fontSize: '1.2rem', marginTop: '10px', maxWidth: '600px', color: '#fff', zIndex: '1' }}>
+        Custom artificial intelligence solutions tailored for your business.
+      </p>
+      <div style={{ marginTop: '20px', display: 'flex', gap: '15px', zIndex: '1' }}>
+        <button
           style={{
-            width: '100%',
-            height: '100%',
-            objectFit: 'contain', // Ensure the scene is scaled correctly within its container
+            padding: '12px 24px',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            background: 'rgba(255, 255, 255, 0.2)',
+            border: '1px solid rgba(255, 255, 255, 0.5)',
+            color: '#fff',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            backdropFilter: 'blur(10px)',
           }}
-        />
-      )}
+        >
+          Our AI Solutions
+        </button>
+        <button
+          style={{
+            padding: '12px 24px',
+            fontSize: '1rem',
+            fontWeight: 'bold',
+            background: '#004e92',
+            border: 'none',
+            color: '#fff',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            boxShadow: '0px 4px 10px rgba(0, 78, 146, 0.4)',
+          }}
+        >
+          Contact Us
+        </button>
+      </div>
     </div>
   );
 }
