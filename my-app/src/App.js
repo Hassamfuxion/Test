@@ -523,92 +523,93 @@ const SSConsultant = () => {
     </div>
 
     <div className="row service-bg">
-      <div className="col-lg-5">
-        <div className="serivce-thumb">
-          <img src="assets/images/resource/servc-thumb.png" alt="" />
-        </div>
-      </div>
-      <div className="col-lg-7">
-        <div className="row">
-          <div className="col-lg-12">
-            <div className="single-service-box2">
-              <div className="service-icon">
-                <img src="assets/images/resource/icongif25.gif" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="service-title">Fabric Mastery</h2>
-                <p className="service-desc">
-                  Achieve excellence in fabric handling, material planning, and cutting processes.
-                </p>
-                <div className="right-arrow">
-                  <a href="./about">
-                    <i className="bi bi-arrow-right-short" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-12">
-            <div className="single-service-box2">
-              <div className="service-icon">
-                <img src="assets/images/resource/icongif30.gif" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="service-title">Perfect Packaging</h2>
-                <p className="service-desc">
-                  Ensure every product is packaged to perfection with our EPC tools.
-                </p>
-                <div className="right-arrow">
-                  <a href="./about">
-                    <i className="bi bi-arrow-right-short" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-12">
-            <div className="single-service-box2">
-              <div className="service-icon">
-                <img src="assets/images/resource/icongif32.gif" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="service-title">Global Logistics</h2>
-                <p className="service-desc">
-                  Simplify shipping and manage global operations with ease.
-                </p>
-                <div className="right-arrow">
-                  <a href="./about">
-                    <i className="bi bi-arrow-right-short" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-12">
-            <div className="single-service-box2">
-              <div className="service-icon">
-                <img src="assets/images/resource/icongif33.gif" alt="" />
-              </div>
-              <div className="service-content">
-                <h2 className="service-title">Fleet Excellence</h2>
-                <p className="service-desc">
-                  Track and manage vehicles with advanced tools for maintenance and operations.
-                </p>
-                <div className="right-arrow">
-                  <a href="./about">
-                    <i className="bi bi-arrow-right-short" />
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
+  <div className="col-lg-5">
+    <div className="serivce-thumb">
+      <img src="assets/images/resource/servc-thumb.png" alt="" />
     </div>
+  </div>
+  <div className="col-lg-7">
+    <div className="row">
+      <div className="col-lg-12">
+        <div className="single-service-box2">
+          <div className="service-icon">
+            <img src="assets/images/resource/icongif25.gif" alt="" />
+          </div>
+          <div className="service-content">
+            <h2 className="service-title">Fabric Mastery</h2>
+            <p className="service-desc" style={{ color: 'white' }}>
+              Achieve excellence in fabric handling, material planning, and cutting processes.
+            </p>
+            <div className="right-arrow">
+              <a href="./about">
+                <i className="bi bi-arrow-right-short" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-lg-12">
+        <div className="single-service-box2">
+          <div className="service-icon">
+            <img src="assets/images/resource/icongif30.gif" alt="" />
+          </div>
+          <div className="service-content">
+            <h2 className="service-title">Perfect Packaging</h2>
+            <p className="service-desc" style={{ color: 'white' }}>
+              Ensure every product is packaged to perfection with our EPC tools.
+            </p>
+            <div className="right-arrow">
+              <a href="./about">
+                <i className="bi bi-arrow-right-short" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-lg-12">
+        <div className="single-service-box2">
+          <div className="service-icon">
+            <img src="assets/images/resource/icongif32.gif" alt="" />
+          </div>
+          <div className="service-content">
+            <h2 className="service-title">Global Logistics</h2>
+            <p className="service-desc" style={{ color: 'white' }}>
+              Simplify shipping and manage global operations with ease.
+            </p>
+            <div className="right-arrow">
+              <a href="./about">
+                <i className="bi bi-arrow-right-short" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="col-lg-12">
+        <div className="single-service-box2">
+          <div className="service-icon">
+            <img src="assets/images/resource/icongif33.gif" alt="" />
+          </div>
+          <div className="service-content">
+            <h2 className="service-title">Fleet Excellence</h2>
+            <p className="service-desc" style={{ color: 'white' }}>
+              Track and manage vehicles with advanced tools for maintenance and operations.
+            </p>
+            <div className="right-arrow">
+              <a href="./about">
+                <i className="bi bi-arrow-right-short" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
   </div>
 </div>
 
