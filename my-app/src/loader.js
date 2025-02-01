@@ -19,7 +19,7 @@ const Loader = () => {
     // Stop loader and start sliding up after 5 seconds
     setTimeout(() => {
       setLoading(false);
-    }, 3000); // 5 seconds for loading before triggering slide-up
+    }, 3500); // 5 seconds for loading before triggering slide-up
   }, []);
 
   const loaderStyles = {

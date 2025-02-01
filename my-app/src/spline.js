@@ -11,7 +11,7 @@ export default function HeroSection() {
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background: `url("/assets/images/resource/Hero1.jpg") no-repeat center center/cover`,
+        background: `url("/assets/images/resource/Hero2.jpg") no-repeat center center/cover`,
         animation: 'moveBackground 30s linear infinite', // Smooth background motion
       }}
     >
