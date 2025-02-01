@@ -47,7 +47,7 @@ const SSConsultant = () => {
 <div>
       <HeaderStyle variant="custom-variant" />
       {/* Other components */}
-      <Loader />;
+    
     </div>
 
 
@@ -56,7 +56,7 @@ const SSConsultant = () => {
         {/* Other content */}
         
       </div>
-
+      <Loader />;
    <header></header>
      <Helmet>
      
