@@ -6,7 +6,7 @@ const Loader = () => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false); // Stop loading after 3 seconds
-    }, 3000);
+    }, 5000);
   }, []);
 
   const loaderStyles = {
