@@ -12,9 +12,20 @@ export default function HeroSection() {
         position: 'relative',
         overflow: 'hidden',
         background: `url("/assets/images/resource/Hero.jpg") no-repeat center center/cover`,
-        animation: 'moveBackground 30s linear infinite', // Smooth motion
+        animation: 'moveBackground 30s linear infinite', // Smooth background motion
       }}
     >
+      {/* Sparkles Effect */}
+      <div className="sparkles" style={{
+        position: 'absolute',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '100%',
+        pointerEvents: 'none', // Make sure it doesn't interfere with other elements
+        zIndex: '1',
+      }}></div>
+
       {/* Overlay Effect */}
       <div
         style={{
@@ -24,7 +35,7 @@ export default function HeroSection() {
           top: '0',
           left: '0',
           background: 'rgba(0, 0, 0, 0.5)', // Dark overlay effect
-          zIndex: '1',
+          zIndex: '2',
         }}
       ></div>
 
@@ -35,7 +46,7 @@ export default function HeroSection() {
           fontWeight: 'bold',
           maxWidth: '800px',
           color: '#fff',
-          zIndex: '2', // Ensure content is above other layers
+          zIndex: '3', // Ensure content is above other layers
         }}
       >
         Your Automation Partner
@@ -46,12 +57,12 @@ export default function HeroSection() {
           marginTop: '10px',
           maxWidth: '600px',
           color: '#fff',
-          zIndex: '2', // Ensure content is above other layers
+          zIndex: '3', // Ensure content is above other layers
         }}
       >
         Custom artificial intelligence solutions tailored for your business.
       </p>
-      <div style={{ marginTop: '20px', display: 'flex', gap: '15px', zIndex: '2' }}>
+      <div style={{ marginTop: '20px', display: 'flex', gap: '15px', zIndex: '3' }}>
         <button
           style={{
             padding: '12px 24px',
@@ -95,6 +106,40 @@ export default function HeroSection() {
             }
             100% {
               background-position: 0 0;
+            }
+          }
+
+          /* Sparkles (Stars) Effect */
+          .sparkles::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: transparent;
+            z-index: 1;
+            pointer-events: none;
+            animation: sparkleAnim 5s infinite ease-in-out;
+          }
+
+          /* Fewer stars, less glow */
+          .sparkles::before {
+            background: radial-gradient(circle, rgba(173, 216, 230, 0.6) 2px, rgba(173, 216, 230, 0) 2px);
+            background-size: 30px 30px;
+            animation: sparkleAnim 5s infinite ease-in-out;
+          }
+
+          /* Subtle glow and fade effect */
+          @keyframes sparkleAnim {
+            0% {
+              opacity: 0.2;
+            }
+            30% {
+              opacity: 0.4;
+            }
+            100% {
+              opacity: 0.2;
             }
           }
         `}

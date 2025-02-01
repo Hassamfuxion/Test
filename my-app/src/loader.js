@@ -2,11 +2,24 @@ import React, { useState, useEffect } from "react";
 
 const Loader = () => {
   const [loading, setLoading] = useState(true);
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
+    // Simulate progress filling over 5 seconds
+    const interval = setInterval(() => {
+      setProgress((prevProgress) => {
+        if (prevProgress >= 100) {
+          clearInterval(interval); // Stop the progress bar once it's full
+          return 100;
+        }
+        return prevProgress + 1;
+      });
+    }, 50);
+
+    // Stop loader and start sliding up after 5 seconds
     setTimeout(() => {
-      setLoading(false); // Stop loading after 3 seconds
-    }, 5000);
+      setLoading(false);
+    }, 5000); // 5 seconds for loading before triggering slide-up
   }, []);
 
   const loaderStyles = {
@@ -20,34 +33,42 @@ const Loader = () => {
     justifyContent: "center",
     background: "black", // Black background for loader
     zIndex: 9999,
+    transition: "transform 1s ease-out", // Slide-up transition
+    transform: loading ? "translateY(0)" : "translateY(-100%)", // Slide-up when loader disappears
   };
 
   const videoStyles = {
-    width: "80%",
-    maxWidth: "600px",
+    width: "30%", // Adjust the width to make the video smaller
+    maxWidth: "300px", // Limit the max width to 300px
+    borderRadius: "10px", // Optional: Add rounded corners to the video
   };
 
-  const contentStyles = {
-    background: "linear-gradient(to right, blue, black)", // Gradient applied after loader
-    minHeight: "100vh", // Ensure it fills the entire viewport
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    color: "#fff",
-    padding: "20px",
+  const progressBarContainerStyles = {
+    position: "absolute",
+    bottom: "20px",
+    left: "0",
+    width: "100%",
+    height: "5px",
+    background: "#333", // Dark background for the progress bar
   };
 
-  if (loading) {
-    return (
-      <div style={loaderStyles}>
-        <video autoPlay loop muted style={videoStyles}>
-          <source src="/assets/images/animation logo.mp4" type="video/mp4" />
-        </video>
+  const progressBarStyles = {
+    width: `${progress}%`,
+    height: "100%",
+    background: "linear-gradient(to right, #004e92, #00b0ff)", // Blue to light blue gradient
+    transition: "width 0.1s ease-in-out", // Smooth transition for progress bar
+  };
+
+  return (
+    <div style={loaderStyles}>
+      <video autoPlay loop muted style={videoStyles}>
+        <source src="/assets/images/animation logo.mp4" type="video/mp4" />
+      </video>
+      <div style={progressBarContainerStyles}>
+        <div style={progressBarStyles}></div>
       </div>
-    );
-  }
-
- 
+    </div>
+  );
 };
 
 export default Loader;
