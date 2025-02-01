@@ -19,7 +19,7 @@ const Loader = () => {
     // Stop loader and start sliding up after 5 seconds
     setTimeout(() => {
       setLoading(false);
-    }, 5000); // 5 seconds for loading before triggering slide-up
+    }, 3000); // 5 seconds for loading before triggering slide-up
   }, []);
 
   const loaderStyles = {
@@ -55,7 +55,7 @@ const Loader = () => {
   const progressBarStyles = {
     width: `${progress}%`,
     height: "100%",
-    background: "linear-gradient(to right, #004e92, #00b0ff)", // Blue to light blue gradient
+    background: "#4376BA", // Blue to light blue gradient
     transition: "width 0.1s ease-in-out", // Smooth transition for progress bar
   };
 

@@ -11,7 +11,7 @@ export default function HeroSection() {
         textAlign: 'center',
         position: 'relative',
         overflow: 'hidden',
-        background: `url("/assets/images/resource/Hero.jpg") no-repeat center center/cover`,
+        background: `url("/assets/images/resource/Hero1.jpg") no-repeat center center/cover`,
         animation: 'moveBackground 30s linear infinite', // Smooth background motion
       }}
     >
@@ -22,11 +22,11 @@ export default function HeroSection() {
         left: '0',
         width: '100%',
         height: '100%',
-        pointerEvents: 'none', // Make sure it doesn't interfere with other elements
+        pointerEvents: 'none',
         zIndex: '1',
       }}></div>
 
-      {/* Overlay Effect */}
+      {/* Dark Overlay Effect */}
       <div
         style={{
           position: 'absolute',
@@ -35,6 +35,19 @@ export default function HeroSection() {
           top: '0',
           left: '0',
           background: 'rgba(0, 0, 0, 0.5)', // Dark overlay effect
+          zIndex: '2',
+        }}
+      ></div>
+
+      {/* Black Gradient Overlay at the Bottom */}
+      <div
+        style={{
+          position: 'absolute',
+          width: '100%',
+          height: '40%', // Adjust height for the intensity of the effect
+          bottom: '0',
+          left: '0',
+          background: 'linear-gradient(to top, black 30%, rgba(0,0,0,0) 100%)',
           zIndex: '2',
         }}
       ></div>
