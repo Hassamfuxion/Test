@@ -38,7 +38,7 @@ import Service from './service.js'; // Service page component
 import Contact from './Contact'; // Contact page component
 
 
-
+import Loader from './loader.js';
 
 const SSConsultant = () => {
   return (
@@ -47,16 +47,19 @@ const SSConsultant = () => {
 <div>
       <HeaderStyle variant="custom-variant" />
       {/* Other components */}
+      <Loader />;
     </div>
 
 
     <div className="owl-carousel">
         <div className="owl-video-play-icon" style={{ backgroundImage: `url(${playIcon})` }} />
         {/* Other content */}
+        
       </div>
 
    <header></header>
      <Helmet>
+     
         <meta charset="UTF-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
         <title>SSCONSULTANT</title>
@@ -910,7 +913,7 @@ const SSConsultant = () => {
                 }}
               >
                 <a
-                  href="https://www.instagram.com/uiverse.io/"
+                  href="https://www.instagram.com/"
                   className="instagram"
                 >
                   <svg
@@ -929,7 +932,7 @@ const SSConsultant = () => {
                     />
                   </svg>
                 </a>
-                <a href="https://twitter.com/uiverse_io" className="x">
+                <a href="https://twitter.com/" className="x">
                   <svg
                     width={24}
                     height={24}
@@ -946,7 +949,7 @@ const SSConsultant = () => {
                     />
                   </svg>
                 </a>
-                <a href="https://discord.gg/KD8ba2uUpT" className="discord">
+                <a href="https://discord.gg/" className="discord">
                   <svg
                     width={25}
                     height={25}
