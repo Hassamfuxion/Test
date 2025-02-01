@@ -62,7 +62,7 @@ const Loader = () => {
   return (
     <div style={loaderStyles}>
       <video autoPlay loop muted style={videoStyles}>
-        <source src="/assets/images/animation logo.mp4" type="video/mp4" />
+        <source src="/assets/images/anim1.mp4" type="video/mp4" />
       </video>
       <div style={progressBarContainerStyles}>
         <div style={progressBarStyles}></div>

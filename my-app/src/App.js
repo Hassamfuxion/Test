@@ -855,7 +855,7 @@ const SSConsultant = () => {
     <img src="assets/images/resource/peolpe.png" alt="" />
   </div>
   <div className="people-text">
-    <p style={{ color: 'white' }}>Over 3M+ People Trust SSConsultant ERP Solutions Worldwide.</p>
+    <p style={{ color: 'white' }}>Over 1k+ People Trust SSConsultant ERP Solutions.</p>
   </div>
 </div>
 
