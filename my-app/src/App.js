@@ -301,188 +301,30 @@ const SSConsultant = () => {
   <div className="row">
     <div className="col-lg-12" >
     <marquee
-  behavior="scroll"
-  direction="left"
-  onmouseover="this.stop();"
-  onmouseout="this.start();"
->
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Finance Performance Management</span>
-
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Human Resource Planning</span>
-
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Supply Chain Management</span>
-
-  {/* Finance Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Account Payable</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Account Receivable</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Fixed Asset</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>General Ledger</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Import</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Time Billing Management</span>
-
-  {/* Human Resource Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>HR</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Payroll</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Document Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Time Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>HRMS Setup</span>
-
-  {/* MRP Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Inventory</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Merchandising</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>MRP Setup</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Purchase</span>
-
-  {/* GSM Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Fabric Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Bill of Material</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Cutting Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Fabric Roll Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Fabric Transaction</span>
-
-  {/* Packing Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>EPC Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Packing List Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Order Size Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Barcode Management</span>
-
-  {/* Shipment Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Booking Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Shipment Container Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Shipment Setup</span>
-
-  {/* Thread Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Thread Management</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white', 
-    marginRight: '60px'
-  }}>Thread Setup</span>
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Thread Configuration</span>
-
-  {/* Vehicle Management Tab Services */}
-  <span style={{ 
-    fontFamily: 'Poppins, sans-serif', 
-    color: 'white'
-  }}>Vehicle Management</span>
-</marquee>
-
+      behavior="scroll"
+      direction="left"
+      onmouseover="this.stop();"
+      onmouseout="this.start();"
+    >
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Modularity</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Real-time Data Processing</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Customization</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Scalability</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Integration Capabilities</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>User-friendly Interface</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Analytics and Reporting</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Workflow Automation</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Mobile Accessibility</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Inventory Management</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Production Planning</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Customer Relationship Management (CRM)</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Human Resources Management (HRM)</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Supplier Relationship Management (SRM)</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Document Management</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Financial Management</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Maintenance Management</span>
+      <span style={{ fontFamily: 'Poppins, sans-serif', color: 'white', marginRight: '60px' }}>Compliance Management</span>
+    </marquee>
     </div>
   </div>
 </div>
@@ -501,17 +343,25 @@ const SSConsultant = () => {
   <div className="container">
     <div className="row">
       <div className="col-lg-5">
-        <div className="dexon-section-title white padding-lg">
-          <h4>Our Services</h4>
-          <h1>OUR PRODUCTS</h1>
-          <h1 className="sections">Our Key Offerings</h1>
-        </div>
+
+      <div className="dexon-section-title white padding-lg text-left">
+  <h1>What Benefits Do You Gain</h1>
+  <h1>From Our ERP Solutions?</h1>
+  <p>
+    <span style={{ color: 'white', fontSize: '14px' }}>
+      Supply exceptional services, integrating markets and initiatives.
+    </span>
+  </p>
+</div>
+
+
+       
       </div>
       <div className="col-lg-7">
         <div className="dexon-desc">
           <p>
-            FOCUS-ERP (Enterprise Resource Planning)  
-            SS CONSULTANT offers a well-tested, highly trusted and comprehensive Enterprise Resource Planning (ERP) Solution FOCUS, designed for Large, Medium and Small Size Manufacturing and Service Companies to automate their entire Organization. i.e. Government organizations, Textile Mills, Hospitals, Printing Press and other Production Units could be our key Clients.
+          SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process. 
+          Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.
           </p>
         </div>
         <div className="services-icon">
@@ -522,7 +372,7 @@ const SSConsultant = () => {
       </div>
     </div>
 
-    <div className="row service-bg">
+  <div className="row service-bg">
   <div className="col-lg-5">
     <div className="serivce-thumb">
       <img src="assets/images/resource/servc-thumb.png" alt="" />
@@ -530,85 +380,38 @@ const SSConsultant = () => {
   </div>
   <div className="col-lg-7">
     <div className="row">
-      <div className="col-lg-12">
-        <div className="single-service-box2">
-          <div className="service-icon">
-            <img src="assets/images/resource/icongif25.gif" alt="" />
-          </div>
-          <div className="service-content">
-            <h2 className="service-title">Fabric Mastery</h2>
-            <p className="service-desc" style={{ color: 'white' }}>
-              Achieve excellence in fabric handling, material planning, and cutting processes.
-            </p>
-            <div className="right-arrow">
-              <a href="./about">
-                <i className="bi bi-arrow-right-short" />
-              </a>
+      {[
+        { title: "Fabric Mastery", desc: "Achieve excellence in fabric handling, material planning, and cutting processes.", icon: "icongif25.gif" },
+        { title: "Perfect Packaging", desc: "Ensure every product is packaged to perfection with our EPC tools.", icon: "icongif30.gif" },
+        { title: "Global Logistics", desc: "Simplify shipping and manage global operations with ease.", icon: "icongif32.gif" },
+        { title: "Fleet Excellence", desc: "Track and manage vehicles with advanced tools for maintenance and operations.", icon: "icongif33.gif" },
+        { title: "Comprehensive Financial Management", desc: "Optimize financial operations with powerful analytics and automation.", icon: "icongif34.gif" },
+        { title: "Seamless Order Processing", desc: "Streamline order workflows for faster and more efficient fulfillment.", icon: "icongif35.gif" },
+        { title: "Advanced Project Management Tools", desc: "Enhance productivity with cutting-edge project management solutions.", icon: "icongif36.gif" },
+        { title: "Real-Time Data Analytics", desc: "Gain insights with live data tracking and business intelligence tools.", icon: "icongif37.gif" },
+        { title: "Integrated Supply Chain Management", desc: "Ensure smooth operations with end-to-end supply chain solutions.", icon: "icongif38.gif" }
+      ].map((service, index) => (
+        <div className="col-lg-12" key={index}>
+          <div className="single-service-box2">
+            <div className="service-icon">
+              <img src={`assets/images/resource/${service.icon}`} alt="" />
+            </div>
+            <div className="service-content">
+              <h2 className="service-title">{service.title}</h2>
+              <p className="service-desc" style={{ color: 'white' }}>{service.desc}</p>
+              <div className="right-arrow">
+                <a href="./about">
+                  <i className="bi bi-arrow-right-short" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-
-      <div className="col-lg-12">
-        <div className="single-service-box2">
-          <div className="service-icon">
-            <img src="assets/images/resource/icongif30.gif" alt="" />
-          </div>
-          <div className="service-content">
-            <h2 className="service-title">Perfect Packaging</h2>
-            <p className="service-desc" style={{ color: 'white' }}>
-              Ensure every product is packaged to perfection with our EPC tools.
-            </p>
-            <div className="right-arrow">
-              <a href="./about">
-                <i className="bi bi-arrow-right-short" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-lg-12">
-        <div className="single-service-box2">
-          <div className="service-icon">
-            <img src="assets/images/resource/icongif32.gif" alt="" />
-          </div>
-          <div className="service-content">
-            <h2 className="service-title">Global Logistics</h2>
-            <p className="service-desc" style={{ color: 'white' }}>
-              Simplify shipping and manage global operations with ease.
-            </p>
-            <div className="right-arrow">
-              <a href="./about">
-                <i className="bi bi-arrow-right-short" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="col-lg-12">
-        <div className="single-service-box2">
-          <div className="service-icon">
-            <img src="assets/images/resource/icongif33.gif" alt="" />
-          </div>
-          <div className="service-content">
-            <h2 className="service-title">Fleet Excellence</h2>
-            <p className="service-desc" style={{ color: 'white' }}>
-              Track and manage vehicles with advanced tools for maintenance and operations.
-            </p>
-            <div className="right-arrow">
-              <a href="./about">
-                <i className="bi bi-arrow-right-short" />
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      ))}
     </div>
   </div>
 </div>
+
 
   </div>
 </div>
@@ -624,15 +427,17 @@ const SSConsultant = () => {
   <div className="container">
     <div className="row dream-bg">
       <div className="col-lg-12">
-        <div className="dexon-section-title white padding-lg text-center">
-          <h1>What Benefits Do You Gain</h1>
-          <h1>From Our ERP Solutions?</h1>
-          <p>
-            <span style={{ color: 'white', fontSize: '14px' }}>
-              Supply exceptional services, integrating markets and initiatives.
-            </span>
-          </p>
-        </div>
+
+      <div className="dexon-section-title white padding-lg text-center">
+  <h4>Our Services</h4>
+  <h1>OUR PRODUCTS</h1>
+  <h1 className="sections">Our Key Offerings</h1>
+</div>
+
+        
+    
+
+
       </div>
       <div className="dream-shape2">
         <img src="assets/images/resource/shape2.png" alt="" />

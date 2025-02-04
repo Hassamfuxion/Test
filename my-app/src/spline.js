@@ -62,7 +62,7 @@ export default function HeroSection() {
           zIndex: '3', // Ensure content is above other layers
         }}
       >
-        Your Automation Partner
+         Transforming Ideas into Reality
       </h1>
       <p
         style={{
@@ -73,40 +73,9 @@ export default function HeroSection() {
           zIndex: '3', // Ensure content is above other layers
         }}
       >
-        Custom artificial intelligence solutions tailored for your business.
+       Empowering your industry with Tailored Solution
       </p>
-      <div style={{ marginTop: '20px', display: 'flex', gap: '15px', zIndex: '3' }}>
-        <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            background: 'rgba(255, 255, 255, 0.2)',
-            border: '1px solid rgba(255, 255, 255, 0.5)',
-            color: '#fff',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            backdropFilter: 'blur(10px)',
-          }}
-        >
-          Our AI Solutions
-        </button>
-        <button
-          style={{
-            padding: '12px 24px',
-            fontSize: '1rem',
-            fontWeight: 'bold',
-            background: '#004e92',
-            border: 'none',
-            color: '#fff',
-            borderRadius: '8px',
-            cursor: 'pointer',
-            boxShadow: '0px 4px 10px rgba(0, 78, 146, 0.4)',
-          }}
-        >
-          Contact Us
-        </button>
-      </div>
+     
 
       <style>
         {`

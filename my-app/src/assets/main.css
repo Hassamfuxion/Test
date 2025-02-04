@@ -497,8 +497,8 @@ ul {
     position: fixed !important;
     top: -110px;
     opacity: 0;
-    visibility: hidden;
-    transition: all 0.4s ease;
+    visibility: visible;
+   
     background-color: #1a1818;
     color: white;
   }
@@ -651,7 +651,7 @@ ul {
       padding: 10px 0;
       z-index: 100;
       opacity: 0;
-      visibility: hidden;
+      visibility: visible;
       display: block !important;
       border-radius: 0 0 5px 5px;
       -webkit-transition: all 0.4s ease;
