@@ -39,6 +39,7 @@ import Contact from './Contact'; // Contact page component
 
 
 import Loader from './loader.js';
+import Services from "./serviceicon.js";
 
 const SSConsultant = () => {
   return (
@@ -342,7 +343,7 @@ const SSConsultant = () => {
 >
   <div className="container">
     <div className="row">
-      <div className="col-lg-5">
+      <div className="col-lg-12">
 
       <div className="dexon-section-title white padding-lg text-left">
   <h1>What Benefits Do You Gain</h1>
@@ -352,12 +353,44 @@ const SSConsultant = () => {
       Supply exceptional services, integrating markets and initiatives.
     </span>
   </p>
+  <div className="dexon-desc">
+          <p>
+          SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process. 
+          Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.
+          </p>
+        </div>
+        <div className="serivce-thumb">
+      <img src="assets/images/resource/servc-thumb.png" alt="" />
+    </div>
+    <div className="services-icon">
+          <a href="./service">
+            <i className="bi bi-arrow-right-short" />
+          </a>
+        </div>
 </div>
 
 
        
       </div>
+      <Services></Services>
       <div className="col-lg-7">
+
+
+   
+  </div>
+
+      <div className="col-lg-7">
+      
+      </div>
+    </div>
+
+  <div className="row service-bg">
+  <div className="col-lg-5">
+    <div className="serivce-thumb">
+      <img src="assets/images/resource/servc-thumb.png" alt="" />
+    </div>
+  </div>
+  <div className="col-lg-7">
         <div className="dexon-desc">
           <p>
           SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process. 
@@ -370,46 +403,6 @@ const SSConsultant = () => {
           </a>
         </div>
       </div>
-    </div>
-
-  <div className="row service-bg">
-  <div className="col-lg-5">
-    <div className="serivce-thumb">
-      <img src="assets/images/resource/servc-thumb.png" alt="" />
-    </div>
-  </div>
-  <div className="col-lg-7">
-    <div className="row">
-      {[
-        { title: "Fabric Mastery", desc: "Achieve excellence in fabric handling, material planning, and cutting processes.", icon: "icongif25.gif" },
-        { title: "Perfect Packaging", desc: "Ensure every product is packaged to perfection with our EPC tools.", icon: "icongif30.gif" },
-        { title: "Global Logistics", desc: "Simplify shipping and manage global operations with ease.", icon: "icongif32.gif" },
-        { title: "Fleet Excellence", desc: "Track and manage vehicles with advanced tools for maintenance and operations.", icon: "icongif33.gif" },
-        { title: "Comprehensive Financial Management", desc: "Optimize financial operations with powerful analytics and automation.", icon: "icongif34.gif" },
-        { title: "Seamless Order Processing", desc: "Streamline order workflows for faster and more efficient fulfillment.", icon: "icongif35.gif" },
-        { title: "Advanced Project Management Tools", desc: "Enhance productivity with cutting-edge project management solutions.", icon: "icongif36.gif" },
-        { title: "Real-Time Data Analytics", desc: "Gain insights with live data tracking and business intelligence tools.", icon: "icongif37.gif" },
-        { title: "Integrated Supply Chain Management", desc: "Ensure smooth operations with end-to-end supply chain solutions.", icon: "icongif38.gif" }
-      ].map((service, index) => (
-        <div className="col-lg-12" key={index}>
-          <div className="single-service-box2">
-            <div className="service-icon">
-              <img src={`assets/images/resource/${service.icon}`} alt="" />
-            </div>
-            <div className="service-content">
-              <h2 className="service-title">{service.title}</h2>
-              <p className="service-desc" style={{ color: 'white' }}>{service.desc}</p>
-              <div className="right-arrow">
-                <a href="./about">
-                  <i className="bi bi-arrow-right-short" />
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
 </div>
 
 

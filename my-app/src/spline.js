@@ -13,6 +13,7 @@ export default function HeroSection() {
         overflow: 'hidden',
         background: `url("/assets/images/resource/Hero2.jpg") no-repeat center center/cover`,
         animation: 'moveBackground 30s linear infinite', // Smooth background motion
+        fontFamily: "'Poppins', sans-serif", // Apply Poppins font globally
       }}
     >
       {/* Sparkles Effect */}
@@ -62,7 +63,7 @@ export default function HeroSection() {
           zIndex: '3', // Ensure content is above other layers
         }}
       >
-         Transforming Ideas into Reality
+        Transforming Ideas into Reality
       </h1>
       <p
         style={{
@@ -73,12 +74,13 @@ export default function HeroSection() {
           zIndex: '3', // Ensure content is above other layers
         }}
       >
-       Empowering your industry with Tailored Solution
+        Empowering your industry with Tailored Solutions
       </p>
-     
 
       <style>
         {`
+          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
           @keyframes moveBackground {
             0% {
               background-position: 0 0;
@@ -123,6 +125,11 @@ export default function HeroSection() {
             100% {
               opacity: 0.2;
             }
+          }
+
+          /* Apply Poppins font globally */
+          * {
+            font-family: 'Poppins', sans-serif;
           }
         `}
       </style>
