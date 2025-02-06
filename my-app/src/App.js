@@ -371,7 +371,7 @@ const SSConsultant = () => {
       </div>
     </div>
 
-  <div className="row service-bg">
+  {/* <div className="row service-bg">
   <div className="col-lg-5">
     <div className="serivce-thumb">
       <img src="assets/images/resource/servc-thumb.png" alt="" />
@@ -394,7 +394,7 @@ const SSConsultant = () => {
           </a>
         </div>
       </div>
-</div>
+</div> */}
 
 
   </div>

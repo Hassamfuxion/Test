@@ -16,136 +16,189 @@ const Services = () => {
 
   return (
     <ServicesContainer>
-      <div className="row">
-        {services.map((service, index) => (
-          <div className="col-lg-4" key={index}>
-            <ServiceCard>
-              <div className="card">
-                <div className="content">
-                  {/* GIF Icon centered and on top */}
-                  <div className="service-icon">
-                    <img src={`/assets/images/resource/${service.icon}`} alt={service.title} />
-                  </div>
-                  <div className="service-content">
-                    <h3 className="service-title">{service.title}</h3>
-                    <p className="service-desc">{service.desc}</p>
-                  </div>
+      {services.map((service, index) => (
+        <ServiceCard key={index}>
+          <div className="outer">
+            <div className="dot" />
+            <div className="card">
+              <div className="ray" />
+              <div className="service-content">
+                <div className="service-icon">
+                  <img src={`/assets/images/resource/${service.icon}`} alt={service.title} />
                 </div>
-                <div className="hover-border"></div> {/* Border hover effect */}
+                <div className="text">{service.title}</div>
+                <div className="desc">{service.desc}</div>
               </div>
-            </ServiceCard>
+              <div className="line topl" />
+              <div className="line leftl" />
+              <div className="line bottoml" />
+              <div className="line rightl" />
+            </div>
           </div>
-        ))}
-      </div>
+        </ServiceCard>
+      ))}
     </ServicesContainer>
   );
 };
 
 const ServicesContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
+  gap: 30px; /* Adds space between cards */
   padding: 50px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;  /* Adds space between the cards */
+  justify-items: center; /* Centers the cards within each column */
+
+  /* Responsive design for smaller screens */
+  @media (max-width: 1024px) {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr; /* 1 card per row on smaller screens */
+  }
 `;
 
 const ServiceCard = styled.div`
+  .outer {
+    width: 380px; /* Increased width for a more rectangular shape */
+    height: 500px; /* Increased height */
+    border-radius: 20px; /* Rounded corners for a sleek look */
+    padding: 1px;
+    background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
+    position: relative;
+  }
+
+  .dot {
+    width: 5px;
+    aspect-ratio: 1;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px #ffffff;
+    border-radius: 100px;
+    z-index: 2;
+    right: 10%;
+    top: 10%;
+    animation: moveDot 6s linear infinite;
+  }
+
+  @keyframes moveDot {
+    0%,
+    100% {
+      top: 10%;
+      right: 10%;
+    }
+    25% {
+      top: 10%;
+      right: calc(100% - 35px);
+    }
+    50% {
+      top: calc(100% - 30px);
+      right: calc(100% - 35px);
+    }
+    75% {
+      top: calc(100% - 30px);
+      right: 10%;
+    }
+  }
+
   .card {
-    --border: 4px;
-    --rounded: 16px;
-    --w-card: 500px;  /* Increased width */
-    --h-card: 300px;  /* Decreased height */
-    margin: 10px;
-    width: var(--w-card);
-    height: var(--h-card);
-    max-width: 100%;
-    border-radius: var(--rounded);
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    border: solid 1px #202222;
+    background-size: 20px 20px;
+    background: radial-gradient(circle 280px at 0% 0%, #444444,rgb(4, 19, 151));
     display: flex;
-    flex-direction: column;  /* Stack content vertically */
     align-items: center;
     justify-content: center;
     position: relative;
-    padding: var(--border);
-    background: transparent; /* Transparent background */
-    transition: all 0.3s ease-in-out;
-    overflow: hidden;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-     padding:200px;
+    flex-direction: column;
+    color: #fff;
+    padding: 30px;  /* Increased padding inside the card */
+    padding-top: 100px; /* Added more padding above the content to make space for the dot */
   }
 
-  .card:hover {
-  
-    transform: scale(1.05);  /* Slightly enlarge card on hover */
-  }
-
-  .hover-border {
+  .ray {
+    width: 220px;
+    height: 45px;
+    border-radius: 100px;
     position: absolute;
-    top: 0;
+    background-color:rgb(199, 199, 199);
+    opacity: 0.4;
+    box-shadow: 0 0 50px #fff;
+    filter: blur(10px);
+    transform-origin: 10%;
+    top: 0%;
     left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: var(--rounded);
-    border: 4px solid #00ccff;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
+    transform: rotate(40deg);
   }
 
-  .card:hover .hover-border {
-    opacity: 1;  /* Show the border when hovered */
-  }
-
-  .content {
-    position: absolute;
-    width: calc(100% - (var(--border) * 4));
-    height: calc(100% - (var(--border) * 4));
-    border-radius: calc(var(--rounded) - 4px);
-    z-index: 7;
-   
-    padding: 20px;
+  .service-content {
     display: flex;
-    flex-direction: column;  /* Align elements vertically */
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    text-align: center;  /* Center text */
-    opacity: 1;
-    transition: opacity 0.3s ease-in-out;
+    text-align: center;
+    padding: 20px; /* Ensures space around the content */
   }
 
   .service-icon {
-    width: 120px;
-    height: 120px;
-    margin-bottom: 20px; /* Add spacing below the image */
+    width: 150px; /* Increased size for icon */
+    height: 150px;
+    margin-bottom: 20px;  /* Increased spacing between the image and text */
     display: flex;
     align-items: center;
-    
     justify-content: center;
+    padding: 20px;  /* Increased padding around the image */
   }
 
   .service-icon img {
     width: 100%;
-    padding:10px;
     height: 100%;
     object-fit: contain;
   }
 
-  .service-title {
-    font-size: 1.5rem;
-    color: white;
-    font-weight: bold;
-    margin-bottom: 10px;
+  .text {
+    font-weight: bolder;
+    font-size: 1.8rem; /* Slightly larger text */
+    color: #fff;
+    padding: 10px 0;  /* Added padding top and bottom to give space between elements */
   }
 
-  .service-desc {
-    color: white;
-    font-size: 14px;
-    margin-top: 10px;
+  .desc {
+    font-size: 0.9rem;
+    color: #ccc;
+    padding: 10px 0; /* Added padding for space between the description and heading */
   }
 
-  @media (max-width: 768px) {
-    .card {
-      width: 100%;
-      height: auto;
-    }
+  .line {
+    width: 100%;
+    height: 1px;
+    position: absolute;
+    background-color: #2c2c2c;
+  }
+
+  .topl {
+    top: 10%;
+    background: linear-gradient(90deg,rgb(136, 136, 136) 30%, #1d1f1f 70%);
+  }
+
+  .bottoml {
+    bottom: 10%;
+  }
+
+  .leftl {
+    left: 10%;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(180deg, #747474 30%, #222424 70%);
+  }
+
+  .rightl {
+    right: 10%;
+    width: 1px;
+    height: 100%;
   }
 `;
 
