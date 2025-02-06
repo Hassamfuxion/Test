@@ -1487,7 +1487,7 @@ ul {
 }
 
 body {
-    cursor: url("C:/Users/Fuxionsoft/Documents/GitHub/Test/my-app/public/cursor.cur") 16 16, auto;  /* Hotspot at the center */
+    cursor: url("cursor.cur") 16 16, auto;  /* Hotspot at the center */
   }
   
   
