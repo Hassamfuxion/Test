@@ -14,7 +14,8 @@ const Card = () => {
           <h1>What Benefits Do You Gain From Our ERP Solutions?</h1>
           <p className="text">Supply exceptional services, integrating markets and initiatives.</p>
           <p className="text">
-            SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS. Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process.
+            SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS.
+            Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process.
             Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.
           </p>
         </div>
@@ -31,12 +32,12 @@ const StyledWrapper = styled.div`
 
   .card {
     width: 90%;
-    max-width: 1200px; /* Set a max width for larger screens */
+    max-width: 1200px;
     height: 450px;
     background: transparent;
     border-radius: 16px;
     display: flex;
-    flex-direction: row; /* Horizontal layout */
+    flex-direction: row;
     overflow: hidden;
     box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
     position: relative;
@@ -45,16 +46,19 @@ const StyledWrapper = styled.div`
   }
 
   .img-container {
-    width: 40%; /* Adjust image size */
+    width: 40%;
     height: 100%;
+    display: flex;
+    justify-content: center; /* Centers the image horizontally */
+    align-items: center; /* Centers the image vertically */
     overflow: hidden;
   }
 
   .img {
-    width: 100%;
-    height: 100%;
+    width: 281px;
+    height: 355px;
     object-fit: cover;
-    filter: blur(7px); /* Apply initial blur to the image */
+    filter: blur(7px);
     transition: 0.2s ease-in-out;
   }
 
@@ -65,38 +69,30 @@ const StyledWrapper = styled.div`
     align-items: flex-start;
     gap: 25px;
     padding: 20px;
-    width: 60%; /* Adjust width of text box */
+    width: 60%;
     color: white;
-    opacity: 1; /* Keep the text visible */
-    filter: blur(7px); /* Apply initial blur to the text */
-    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out; /* Transition both opacity and filter */
-  }
-
-  .textBox > .text {
-    font-weight: bold;
-  }
-
-  .textBox > .head {
-    font-size: 24px;
+    opacity: 1;
+    filter: blur(7px);
+    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out;
   }
 
   .textBox > h1 {
-    font-size: 32px; /* Increased font size */
+    font-size: 32px;
     font-weight: 600;
   }
 
   .textBox > .text {
-    font-size: 18px; /* Increased font size */
+    font-size: 18px;
     font-weight: 300;
   }
 
   .card:hover .textBox {
-    opacity: 1; /* Text appears unblurred */
-    filter: blur(0px); /* Remove blur from text */
+    opacity: 1;
+    filter: blur(0px);
   }
 
   .card:hover .img {
-    filter: blur(0px); /* Remove blur from image */
+    filter: blur(0px);
     animation: anim 3s infinite;
   }
 
@@ -121,32 +117,39 @@ const StyledWrapper = styled.div`
   /* Responsive Styles */
   @media (max-width: 768px) {
     .card {
-      flex-direction: column; /* Stack the image and text vertically */
+      flex-direction: column;
       height: auto;
-      width: 100%;
-      padding: 25px;
+      width: 95%;
+      padding: 20px;
     }
 
     .img-container {
       width: 100%;
-      height: 350px; /* Adjust image height */
+      height: auto;
+      display: flex;
+      justify-content: center; /* Centers image horizontally */
+      align-items: center; /* Ensures image is properly positioned */
+      margin-bottom: 20px; /* Adds space between image and text */
+    }
+
+    .img {
+      width: 100%;
+      max-width: 300px; /* Limits image size for better responsiveness */
+      height: auto;
     }
 
     .textBox {
       width: 100%;
-      padding: 20px; /* Adjust padding */
+      padding: 15px;
+      text-align: center; /* Centers text for better readability on mobile */
     }
 
     .textBox > h1 {
-      font-size: 28px;
-    }
-
-    .textBox > .head {
-      font-size: 22px;
+      font-size: 26px;
     }
 
     .textBox > .text {
-      font-size: 16px; /* Adjust font size for smaller screens */
+      font-size: 16px;
     }
   }
 `;
