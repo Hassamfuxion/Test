@@ -27,11 +27,12 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 100vh; /* Centering vertically */
 
   .card {
-    width: 80%;
-    height: 350px;
+    width: 90%;
+    max-width: 1200px; /* Set a max width for larger screens */
+    height: 450px;
     background: transparent;
     border-radius: 16px;
     display: flex;
@@ -39,12 +40,12 @@ const StyledWrapper = styled.div`
     overflow: hidden;
     box-shadow: 0px 8px 28px -9px rgba(0, 0, 0, 0.45);
     position: relative;
-    transition: 0.2s ease-in-out;
     padding: 50px;
+    transition: 0.2s ease-in-out;
   }
 
   .img-container {
-    width: 40%;
+    width: 40%; /* Adjust image size */
     height: 100%;
     overflow: hidden;
   }
@@ -57,16 +58,16 @@ const StyledWrapper = styled.div`
   }
 
   .textBox {
-    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 15px;
-    padding: 20px; /* Padding inside */
-    width: 60%;
+    gap: 25px;
+    padding: 20px;
+    width: 60%; /* Adjust width of text box */
     color: white;
     transition: 0.2s ease-in-out;
+    opacity: 0;
   }
 
   .textBox > .text {
@@ -74,16 +75,16 @@ const StyledWrapper = styled.div`
   }
 
   .textBox > .head {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .textBox > h1 {
-    font-size: 24px;
+    font-size: 32px; /* Increased font size */
     font-weight: 600;
   }
 
   .textBox > .text {
-    font-size: 14px;
+    font-size: 18px; /* Increased font size */
     font-weight: 300;
   }
 
@@ -118,29 +119,31 @@ const StyledWrapper = styled.div`
   @media (max-width: 768px) {
     .card {
       flex-direction: column; /* Stack the image and text vertically */
-      height: auto; /* Adjust height to content */
+      height: auto;
+      width: 100%;
+      padding: 25px;
     }
 
     .img-container {
       width: 100%;
-      height: 250px;
+      height: 350px; /* Adjust image height */
     }
 
     .textBox {
       width: 100%;
-      padding: 15px; /* Reduced padding for smaller screens */
+      padding: 20px; /* Adjust padding */
     }
 
     .textBox > h1 {
-      font-size: 20px; /* Reduce font size for smaller screens */
+      font-size: 28px;
     }
 
     .textBox > .head {
-      font-size: 18px; /* Reduce font size for smaller screens */
+      font-size: 22px;
     }
 
     .textBox > .text {
-      font-size: 12px; /* Reduce font size for smaller screens */
+      font-size: 16px; /* Adjust font size for smaller screens */
     }
   }
 `;
