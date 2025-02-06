@@ -10,7 +10,6 @@ const Card = () => {
           <img src="assets/images/resource/servc-thumb.png" alt="Service" className="img" />
         </div>
         <div className="textBox">
-          <p className="text head"></p>
           <h1>What Benefits Do You Gain From Our ERP Solutions?</h1>
           <p className="text">Supply exceptional services, integrating markets and initiatives.</p>
           <p className="text">
@@ -28,12 +27,12 @@ const StyledWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Centering vertically */
+  min-height: 100vh; /* Ensures proper centering */
+  padding: 20px; /* Adds spacing on smaller screens */
 
   .card {
     width: 90%;
     max-width: 1200px;
-    height: 450px;
     background: transparent;
     border-radius: 16px;
     display: flex;
@@ -49,14 +48,15 @@ const StyledWrapper = styled.div`
     width: 40%;
     height: 100%;
     display: flex;
-    justify-content: center; /* Centers the image horizontally */
-    align-items: center; /* Centers the image vertically */
+    justify-content: center;
+    align-items: center;
     overflow: hidden;
   }
 
   .img {
-    width: 281px;
-    height: 355px;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
     object-fit: cover;
     filter: blur(7px);
     transition: 0.2s ease-in-out;
@@ -67,7 +67,7 @@ const StyledWrapper = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    gap: 25px;
+    gap: 20px;
     padding: 20px;
     width: 60%;
     color: white;
@@ -119,33 +119,34 @@ const StyledWrapper = styled.div`
     .card {
       flex-direction: column;
       height: auto;
-      width: 95%;
-      padding: 20px;
+      width: 100%;
+      padding: 25px;
+      align-items: center;
     }
 
     .img-container {
       width: 100%;
-      height: auto;
       display: flex;
-      justify-content: center; /* Centers image horizontally */
-      align-items: center; /* Ensures image is properly positioned */
-      margin-bottom: 20px; /* Adds space between image and text */
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
     }
 
     .img {
       width: 100%;
-      max-width: 300px; /* Limits image size for better responsiveness */
+      max-width: 250px;
       height: auto;
     }
 
     .textBox {
       width: 100%;
       padding: 15px;
-      text-align: center; /* Centers text for better readability on mobile */
+      text-align: center;
+      align-items: center;
     }
 
     .textBox > h1 {
-      font-size: 26px;
+      font-size: 24px;
     }
 
     .textBox > .text {

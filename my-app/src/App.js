@@ -353,11 +353,11 @@ const SSConsultant = () => {
     <div className="row">
       <div className="col-lg-12">
 
-   
+      <BenefitsSection></BenefitsSection>
 
        
       </div>
-      <BenefitsSection></BenefitsSection>
+     
       <Services></Services>
      
       <div className="col-lg-7">
