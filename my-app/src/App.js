@@ -347,7 +347,7 @@ const SSConsultant = () => {
   style={{ background: 'linear-gradient(to right, blue, black)' }}
 >
 
-<BenefitsSection></BenefitsSection>
+
   <div className="container">
     <div className="row">
       <div className="col-lg-12">
@@ -356,6 +356,7 @@ const SSConsultant = () => {
 
        
       </div>
+      <BenefitsSection></BenefitsSection>
       <Services></Services>
       <div className="col-lg-7">
 
@@ -376,6 +377,10 @@ const SSConsultant = () => {
   </div>
   <div className="col-lg-7">
         <div className="dexon-desc">
+
+        <h1 >What Benefits Do You Gain</h1>
+          <h1>From Our ERP Solutions?</h1>
+          <p>Supply exceptional services, integrating markets and initiatives.</p>
           <p>
           SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process. 
           Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.

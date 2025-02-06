@@ -1,149 +1,171 @@
-import React, { useEffect, useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const BenefitsSection = () => {
-  const [showText, setShowText] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const section = document.getElementById("benefits-section");
-      if (section) {
-        const top = section.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (top < windowHeight - 100 && top > 0) {
-          setShowText(false);
-          setTimeout(() => setShowText(true), 150);
-        }
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
+const Card = () => {
   return (
-    <Section id="benefits-section">
-      <GradientOverlay />
-      <Container>
-        <TextWrapper className={showText ? "visible" : ""}>
-          <h1 className={showText ? "typewriter" : ""}>What Benefits Do You Gain</h1>
-          <h1 className={showText ? "typewriter" : ""}>From Our ERP Solutions?</h1>
-          <p>Supply exceptional services, integrating markets and initiatives.</p>
-          <Description>
-            SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, 
-            FOCUS. Tailored for large, medium, and small-sized manufacturing and service industries, 
-            it automates the entire organizational process. 
-            Our key clients include government organizations, textile mills, garment factories, 
-            printing presses, and other production units.
-          </Description>
-          <Thumbnail>
+    <StyledWrapper>
+      <div className="container">
+        <div className="box">
+          <div className="content">
+            <span className="title">What Benefits Do You Gain </span>
+            <span className="title">From Our ERP Solutions?</span>
+            <h2></h2>
+            <p>Supply exceptional services, integrating markets and initiatives.</p>
+            <p>
+              SS CONSULTANT offers a trusted and efficient Enterprise Resource Planning (ERP) solution, FOCUS. Tailored for large, medium, and small-sized manufacturing and service industries, it automates the entire organizational process.
+              Our key clients include government organizations, textile mills, garment factories, printing presses, and other production units.
+            </p>
+          </div>
+          <div className="image-wrapper">
             <img src="assets/images/resource/servc-thumb.png" alt="ERP Solutions" />
-          </Thumbnail>
-          <Icon>
-            <a href="./service">
-              <i className="bi bi-arrow-right-short" />
-            </a>
-          </Icon>
-        </TextWrapper>
-      </Container>
-    </Section>
+          </div>
+        </div>
+      </div>
+    </StyledWrapper>
   );
 };
 
-/* --- Styled Components --- */
-
-const Section = styled.div`
-  background: linear-gradient(to right, blue, black);
-  position: relative;
+const StyledWrapper = styled.div`
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   min-height: 100vh;
-  text-align: center;
-  padding: 80px 20px; /* Increased padding for better layout */
-  transition: all 0.6s ease-in-out;
-`;
+  background: transparent;
 
-const GradientOverlay = styled.div`
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  height: 180px; /* Increased height for a smoother effect */
-  background: linear-gradient(to top, black, transparent);
-`;
-
-const Container = styled.div`
-  max-width: 900px;
-  z-index: 2;
-  padding: 30px; /* Added padding for better spacing */
-  transition: all 0.6s ease-in-out;
-`;
-
-const fadeIn = keyframes`
-  from { opacity: 0; transform: translateY(50px); }
-  to { opacity: 1; transform: translateY(0); }
-`;
-
-const typewriter = keyframes`
-  from { width: 0; }
-  to { width: 100%; }
-`;
-
-const TextWrapper = styled.div`
-  color: white;
-  opacity: 0;
-  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
-  padding: 20px; /* Added padding for smooth spacing */
-
-  &.visible {
-    opacity: 1;
-    animation: ${fadeIn} 1.2s ease-out forwards;
+  .container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
   }
 
-  .typewriter {
-    font-size: 2.2rem;
-    overflow: hidden;
-    white-space: nowrap;
-    width: 0;
-    display: inline-block;
-    padding-bottom: 10px; /* Added spacing between lines */
-    animation: ${typewriter} 2s ease-out forwards;
+  .box {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    background: rgba(255, 255, 255, 0.07);
+    padding: 2rem;
+    border: 1px solid rgba(255, 255, 255, 0.222);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    transition: all ease 0.3s;
+    text-align: left;
+    flex-wrap: wrap; /* Allow wrapping on small screens */
   }
 
-  p {
-    font-size: 16px;
-    margin-top: 15px;
+  .content {
+    flex: 1;
+    color: white;
+    max-width: 50%; /* Limit the width of text content */
+    margin-right: 2rem; /* Add spacing between content and image */
   }
-`;
 
-const Description = styled.p`
-  font-size: 18px;
-  margin-top: 20px;
-  line-height: 1.7;
-  padding: 10px; /* Improved text readability */
-`;
+  .title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 1rem;
+  }
 
-const Thumbnail = styled.div`
-  margin-top: 25px;
-  img {
-    max-width: 100%;
+  .content h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    line-height: 1.6; /* Add line spacing for headings */
+  }
+
+  .content p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    line-height: 1.8; /* Add line spacing for paragraphs */
+  }
+
+  .image-wrapper img {
+    width: 55%; /* Increase image size */
     height: auto;
     border-radius: 10px;
-    padding: 10px; /* Better spacing around the image */
+    margin-left: 15%; /* Shift image more to the right */
   }
-`;
 
-const Icon = styled.div`
-  margin-top: 25px;
-  font-size: 26px;
-  a {
+  .services-icon {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .services-icon a {
     color: white;
     transition: transform 0.3s;
   }
-  a:hover {
+
+  .services-icon a:hover {
     transform: scale(1.2);
+  }
+
+  .box:hover {
+    box-shadow: 0px 0px 20px 1px #ffbb763f;
+    border: 1px solid rgba(255, 255, 255, 0.454);
+  }
+
+  /* Mobile Responsiveness */
+  @media (max-width: 1024px) {
+    .box {
+      flex-direction: column; /* Stack content vertically */
+      text-align: center; /* Center text on tablets */
+    }
+
+    .content {
+      max-width: 100%; /* Full width for content */
+      padding: 0 1rem; /* Add padding to content */
+      margin-right: 0; /* Remove right margin */
+    }
+
+    .image-wrapper img {
+      width: 80%; /* Make image smaller */
+      margin-left: 0;
+      margin-top: 1rem; /* Add margin between text and image */
+    }
+  }
+
+  @media (max-width: 768px) {
+    .title {
+      font-size: 1.5rem; /* Adjust title font size */
+    }
+
+    .content h2 {
+      font-size: 1.3rem; /* Adjust heading font size */
+    }
+
+    .content p {
+      font-size: 1rem; /* Adjust paragraph font size */
+    }
+
+    .image-wrapper img {
+      width: 80%; /* Reduce image size further on tablets */
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .title {
+      font-size: 1.2rem; /* Adjust title font size for small screens */
+    }
+
+    .content h2 {
+      font-size: 1.1rem; /* Adjust heading font size */
+    }
+
+    .content p {
+      font-size: 0.9rem; /* Adjust paragraph font size */
+    }
+
+    .image-wrapper img {
+      width: 90%; /* Make the image even smaller on very small screens */
+      margin-left: 0;
+    }
   }
 `;
 
-export default BenefitsSection;
+export default Card;
