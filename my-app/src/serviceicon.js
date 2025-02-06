@@ -11,7 +11,7 @@ const Services = () => {
     { title: "Seamless Order Processing", desc: "Streamline order workflows for faster and more efficient fulfillment.", icon: "icongif29.gif" },
     { title: "Advanced Project Management Tools", desc: "Enhance productivity with cutting-edge project management solutions.", icon: "icongif28.gif" },
     { title: "Real-Time Data Analytics", desc: "Gain insights with live data tracking and business intelligence tools.", icon: "icongif27.gif" },
-    { title: "Integrated Supply Chain Management", desc: "Ensure smooth operations with end-to-end supply chain solutions.", icon: "icongif30.gif" }
+    { title: "Integrated Supply Chain Management", desc: "Ensure smooth operations with end-to-end supply chain solutions.", icon: "icongif3.gif" }
   ];
 
   return (
@@ -21,16 +21,17 @@ const Services = () => {
           <div className="col-lg-4" key={index}>
             <ServiceCard>
               <div className="card">
-                <div className="loading-bar"></div> {/* Moving Progress Bar */}
                 <div className="content">
+                  {/* GIF Icon centered and on top */}
                   <div className="service-icon">
-                    <img src={`assets/images/resource/${service.icon}`} alt={service.title} />
+                    <img src={`/assets/images/resource/${service.icon}`} alt={service.title} />
                   </div>
                   <div className="service-content">
                     <h3 className="service-title">{service.title}</h3>
                     <p className="service-desc">{service.desc}</p>
                   </div>
                 </div>
+                <div className="hover-border"></div> {/* Border hover effect */}
               </div>
             </ServiceCard>
           </div>
@@ -44,63 +45,53 @@ const ServicesContainer = styled.div`
   padding: 50px 20px;
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  gap: 20px;  /* Adds space between the cards */
 `;
 
 const ServiceCard = styled.div`
   .card {
     --border: 4px;
     --rounded: 16px;
-    --w-card: 350px;
-    --h-card: 400px;
+    --w-card: 500px;  /* Increased width */
+    --h-card: 300px;  /* Decreased height */
     margin: 10px;
     width: var(--w-card);
     height: var(--h-card);
     max-width: 100%;
     border-radius: var(--rounded);
     display: flex;
+    flex-direction: column;  /* Stack content vertically */
     align-items: center;
     justify-content: center;
     position: relative;
     padding: var(--border);
-    background: black; /* Default background is black */
-    backdrop-filter: blur(10px);
+    background: transparent; /* Transparent background */
     transition: all 0.3s ease-in-out;
     overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+     padding:200px;
   }
 
   .card:hover {
-    background: transparent; /* On hover, background becomes transparent */
+  
+    transform: scale(1.05);  /* Slightly enlarge card on hover */
   }
 
-  /* Moving Progress Bar */
-  .loading-bar {
+  .hover-border {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
     border-radius: var(--rounded);
-    border: 4px solid transparent;
-    background: linear-gradient(90deg, #ffffff, #00ccff, #0066ff, #ffffff);
-    background-size: 300% 300%;
-    -webkit-mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: destination-out;
-    mask-composite: exclude;
-    animation: loadingProgress 3s linear infinite;
+    border: 4px solid #00ccff;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
   }
 
-  @keyframes loadingProgress {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
+  .card:hover .hover-border {
+    opacity: 1;  /* Show the border when hovered */
   }
 
   .content {
@@ -109,45 +100,52 @@ const ServiceCard = styled.div`
     height: calc(100% - (var(--border) * 4));
     border-radius: calc(var(--rounded) - 4px);
     z-index: 7;
-    background-color: black;
-    padding: 15px;
+   
+    padding: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: column;  /* Align elements vertically */
     align-items: center;
     justify-content: center;
-  }
-
-  .card:hover .content {
-    background: transparent; /* When hovered, the content also becomes transparent */
+    text-align: center;  /* Center text */
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
   }
 
   .service-icon {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 15px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 20px; /* Add spacing below the image */
     display: flex;
     align-items: center;
+    
     justify-content: center;
   }
 
   .service-icon img {
     width: 100%;
+    padding:10px;
     height: 100%;
     object-fit: contain;
   }
 
   .service-title {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     color: white;
     font-weight: bold;
-    text-align: center;
+    margin-bottom: 10px;
   }
 
   .service-desc {
     color: white;
     font-size: 14px;
-    text-align: center;
     margin-top: 10px;
+  }
+
+  @media (max-width: 768px) {
+    .card {
+      width: 100%;
+      height: auto;
+    }
   }
 `;
 
