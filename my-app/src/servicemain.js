@@ -54,6 +54,7 @@ const StyledWrapper = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    filter: blur(7px); /* Apply initial blur to the image */
     transition: 0.2s ease-in-out;
   }
 
@@ -66,8 +67,9 @@ const StyledWrapper = styled.div`
     padding: 20px;
     width: 60%; /* Adjust width of text box */
     color: white;
-    transition: 0.2s ease-in-out;
-    opacity: 0;
+    opacity: 1; /* Keep the text visible */
+    filter: blur(7px); /* Apply initial blur to the text */
+    transition: opacity 0.2s ease-in-out, filter 0.2s ease-in-out; /* Transition both opacity and filter */
   }
 
   .textBox > .text {
@@ -89,11 +91,12 @@ const StyledWrapper = styled.div`
   }
 
   .card:hover .textBox {
-    opacity: 1;
+    opacity: 1; /* Text appears unblurred */
+    filter: blur(0px); /* Remove blur from text */
   }
 
   .card:hover .img {
-    filter: blur(7px);
+    filter: blur(0px); /* Remove blur from image */
     animation: anim 3s infinite;
   }
 

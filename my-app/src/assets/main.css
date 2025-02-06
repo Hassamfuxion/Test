@@ -1503,6 +1503,7 @@ ul {
     z-index: 1;
     filter: drop-shadow(-5px -5px 20px rgba(50, 50, 50, 0.7)); /* Adjusted for all sides, increased opacity */
     transition: .5s;
+    height: 270px;
 }
 
 
