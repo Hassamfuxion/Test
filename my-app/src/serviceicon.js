@@ -61,24 +61,29 @@ const ServicesContainer = styled.div`
 const ServiceCard = styled.div`
   .outer {
     width: 380px; /* Increased width for a more rectangular shape */
-    height: 500px; /* Increased height */
+    height: 470px; /* Increased height */
     border-radius: 20px; /* Rounded corners for a sleek look */
     padding: 1px;
     background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
     position: relative;
+    overflow: hidden;
   }
 
   .dot {
     width: 5px;
     aspect-ratio: 1;
     position: absolute;
-    background-color: #fff;
-    box-shadow: 0 0 10px #ffffff;
+    background-color: rgb(6, 227, 243);
+    box-shadow: 0 0 10px rgb(6, 81, 243);
     border-radius: 100px;
     z-index: 2;
     right: 10%;
     top: 10%;
-    animation: moveDot 6s linear infinite;
+    animation: none; /* Initial no animation */
+  }
+
+  .outer:hover .dot {
+    animation: moveDot 6s linear infinite; /* Animation starts when hovering */
   }
 
   @keyframes moveDot {
@@ -108,7 +113,7 @@ const ServiceCard = styled.div`
     border-radius: 15px;
     border: solid 1px #202222;
     background-size: 20px 20px;
-    background: radial-gradient(circle 280px at 0% 0%, #444444,rgb(4, 19, 151));
+    background: radial-gradient(circle 280px at 0% 0%,rgb(36, 76, 252),rgb(2, 4, 8));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,7 +190,7 @@ const ServiceCard = styled.div`
   }
 
   .bottoml {
-    bottom: 10%;
+    bottom: 5%;
   }
 
   .leftl {
