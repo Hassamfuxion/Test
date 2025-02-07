@@ -43,26 +43,25 @@ const Services = () => {
 
 const ServicesContainer = styled.div`
   display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
-  gap: 30px; /* Adds space between cards */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
   padding: 50px 20px;
-  justify-items: center; /* Centers the cards within each column */
+  justify-items: center;
 
-  /* Responsive design for smaller screens */
   @media (max-width: 1024px) {
-    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+    grid-template-columns: repeat(2, 1fr);
   }
 
   @media (max-width: 768px) {
-    grid-template-columns: 1fr; /* 1 card per row on smaller screens */
+    grid-template-columns: 1fr;
   }
 `;
 
 const ServiceCard = styled.div`
   .outer {
-    width: 380px; /* Increased width for a more rectangular shape */
-    height: 470px; /* Increased height */
-    border-radius: 20px; /* Rounded corners for a sleek look */
+    width: 380px;
+    height: 470px;
+    border-radius: 20px;
     padding: 1px;
     background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
     position: relative;
@@ -79,16 +78,14 @@ const ServiceCard = styled.div`
     z-index: 2;
     right: 10%;
     top: 10%;
-    animation: none; /* Initial no animation */
   }
 
   .outer:hover .dot {
-    animation: moveDot 6s linear infinite; /* Animation starts when hovering */
+    animation: moveDot 6s linear infinite;
   }
 
   @keyframes moveDot {
-    0%,
-    100% {
+    0%, 100% {
       top: 10%;
       right: 10%;
     }
@@ -113,15 +110,15 @@ const ServiceCard = styled.div`
     border-radius: 15px;
     border: solid 1px #202222;
     background-size: 20px 20px;
-    background: radial-gradient(circle 280px at 0% 0%,rgb(36, 76, 252),rgb(2, 4, 8));
+    background: radial-gradient(circle 280px at 0% 0%, rgb(36, 76, 252), rgb(2, 4, 8));
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     flex-direction: column;
     color: #fff;
-    padding: 30px;  /* Increased padding inside the card */
-    padding-top: 100px; /* Added more padding above the content to make space for the dot */
+    padding: 30px;
+    padding-top: 100px;
   }
 
   .ray {
@@ -129,7 +126,7 @@ const ServiceCard = styled.div`
     height: 45px;
     border-radius: 100px;
     position: absolute;
-    background-color:rgb(199, 199, 199);
+    background-color: rgb(199, 199, 199);
     opacity: 0.4;
     box-shadow: 0 0 50px #fff;
     filter: blur(10px);
@@ -145,17 +142,17 @@ const ServiceCard = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px; /* Ensures space around the content */
+    padding: 20px;
   }
 
   .service-icon {
-    width: 150px; /* Increased size for icon */
+    width: 150px;
     height: 150px;
-    margin-bottom: 20px;  /* Increased spacing between the image and text */
+    margin-bottom: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;  /* Increased padding around the image */
+    padding: 20px;
   }
 
   .service-icon img {
@@ -166,15 +163,15 @@ const ServiceCard = styled.div`
 
   .text {
     font-weight: bolder;
-    font-size: 1.8rem; /* Slightly larger text */
+    font-size: 1.8rem;
     color: #fff;
-    padding: 10px 0;  /* Added padding top and bottom to give space between elements */
+    padding: 10px 0;
   }
 
   .desc {
     font-size: 0.9rem;
     color: #ccc;
-    padding: 10px 0; /* Added padding for space between the description and heading */
+    padding: 10px 0;
   }
 
   .line {
@@ -186,7 +183,7 @@ const ServiceCard = styled.div`
 
   .topl {
     top: 10%;
-    background: linear-gradient(90deg,rgb(136, 136, 136) 30%, #1d1f1f 70%);
+    background: linear-gradient(90deg, rgb(136, 136, 136) 30%, #1d1f1f 70%);
   }
 
   .bottoml {

@@ -42,7 +42,7 @@ import Loader from './loader.js';
 import Services from "./serviceicon.js";
 import BenefitsSection from "./servicemain.js";
 import Services1 from "./servicemain.js";
-
+import Chatbot from "./chatbot.js";
 
 const SSConsultant = () => {
   return (
@@ -341,7 +341,7 @@ const SSConsultant = () => {
   {/* Start dexon Service Section  */}
   {/*==================================================*/}
 
-
+<Chatbot></Chatbot>
 
   <div
   className="service-section style-two"
@@ -616,49 +616,55 @@ const SSConsultant = () => {
   {/* Start dexon About Section  */}
   {/*==================================================*/}
   <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)' }}>
-    <div className="container">
-      <div className="row about-bg">
+  <div className="container">
+    <div className="row about-bg">
       <div className="col-lg-6">
-  <div className="dexon-section-title white">
-    <h4 style={{ color: 'white' }}>About Us</h4>
-    <h1 style={{ color: 'white' }}>Discover the Most Expertise</h1>
-    <h1 style={{ color: 'white' }}>of Our ERP Solutions</h1>
-    <p style={{ color: 'white' }}>
-      At SSConsultant, we offer industry-leading ERP solutions designed to streamline your business processes, enhance productivity, and ensure seamless integration across all departments.
-    </p>
-  </div>
-  <div className="about-item-list">
-    <ul>
-      <li>
-        <i className="bi bi-check2-all" /> Continually optimize ERP functionalities to meet unique business needs
-      </li>
-      <li>
-        <i className="bi bi-check2-all" /> Seamlessly integrate ERP solutions to enhance operational efficiency
-      </li>
-      <li>
-        <i className="bi bi-check2-all" /> Innovatively deliver ERP solutions for all business scales
-      </li>
-    </ul>
-  </div>
-  <div className="about-people">
-    <img src="assets/images/resource/peolpe.png" alt="" />
-  </div>
-  <div className="people-text">
-    <p style={{ color: 'white' }}>Over 1k+ People Trust SSConsultant ERP Solutions.</p>
-  </div>
-</div>
+        <div className="dexon-section-title white">
+          <h4 style={{ color: 'white' }}>About Us</h4>
+          <h1 style={{ color: 'white' }}>Creative Solutions for Your Brand</h1>
+          <p style={{ color: 'white' }}>
+            At <strong>FusionSoft</strong>, we specialize in crafting visually stunning designs, professional branding, and impactful digital experiences to elevate your business.
+          </p>
+        </div>
 
-        <div className="col-lg-6">
-          <div className="about-thumb">
-            <img src="assets/images/resource/about3.png" alt="" />
-            <div className="about-shape">
-              <img src="assets/images/resource/shap-1.png" alt="" />
-            </div>
+        <div className="about-item-list">
+          <h5 style={{ color: 'white' }}>Our Services</h5>
+          <ul>
+            <li>
+              <i className="bi bi-check2-all" /> <strong>Logo Design</strong> – Unique and memorable branding
+            </li>
+            <li>
+              <i className="bi bi-check2-all" /> <strong>Website Development</strong> – Stunning, responsive, and user-friendly websites
+            </li>
+            <li>
+              <i className="bi bi-check2-all" /> <strong>Digital Marketing</strong> – Strategies to boost your online presence
+            </li>
+            <li>
+              <i className="bi bi-check2-all" /> <strong>Illustration</strong> – Custom graphics and visual storytelling
+            </li>
+          </ul>
+        </div>
+
+        <div className="about-people">
+          <img src="assets/images/resource/peolpe.png" alt="" />
+        </div>
+        <div className="people-text">
+          <p style={{ color: 'white' }}>Over 1k+ clients trust FusionSoft for creative solutions.</p>
+        </div>
+      </div>
+
+      <div className="col-lg-6">
+        <div className="about-thumb">
+          <img src="assets/images/resource/about3.png" alt="" />
+          <div className="about-shape">
+            <img src="assets/images/resource/shap-1.png" alt="" />
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
   {/*==================================================*/}
   {/* End dexon About Section  */}
   {/*==================================================*/}
@@ -682,7 +688,7 @@ const SSConsultant = () => {
               }}
             >
               <img
-                src="assets/images/resource/servc-thumb.png"
+                src="assets/images/resource/fuxion.png"
                 alt="Astronaut"
                 className="image"
                 style={{ maxWidth: "100%", borderRadius: 10 }}
@@ -761,33 +767,32 @@ const SSConsultant = () => {
           </div>
           <div className="col-lg-6">
   <div className="dexon-section-title white">
-    <h4>Contact Us</h4>
-    <h1>Discover the Latest Features of Our ERP Solutions</h1>
+    <h4>About FuxionCreatives</h4>
+    <h1>Innovative Design & Digital Solutions</h1>
     <p style={{ color: 'white', fontSize: '14px' }}>
-      Our ERP systems integrate financial management, order processing, project management, and more to streamline your business operations.
+      At FuxionCreatives, we specialize in crafting unique brand identities, web solutions, and digital strategies to elevate your business.
     </p>
   </div>
   <div className="about-item-list">
     <ul>
       <li>
-        <i className="bi bi-check2-all" /> Comprehensive Financial Management
+        <i className="bi bi-check2-all" /> Logo Design – Crafting impactful brand identities
       </li>
       <li>
-        <i className="bi bi-check2-all" /> Seamless Order Processing
+        <i className="bi bi-check2-all" /> Website Development – Creating modern and user-friendly websites
       </li>
       <li>
-        <i className="bi bi-check2-all" /> Advanced Project Management Tools
+        <i className="bi bi-check2-all" /> Digital Marketing – Driving business growth with strategic campaigns
       </li>
       <li>
-        <i className="bi bi-check2-all" /> Real-Time Data Analytics
-      </li>
-      <li>
-        <i className="bi bi-check2-all" /> Integrated Supply Chain Management
+        <i className="bi bi-check2-all" /> Branding & Illustration – Bringing your vision to life with creativity
       </li>
     </ul>
   </div>
   <div className="about-people">
-  <a href="./Contact"> <button className="shadow__btn">Contact Us</button></a>
+    <a href="./Contact">
+      <button className="shadow__btn">Work With Us</button>
+    </a>
   </div>
 </div>
 
@@ -1189,23 +1194,7 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Start scrollup section Section */}
   {/*==================================================*/}
-  <div className="prgoress_indicator active-progress">
-    <svg
-      className="progress-circle svg-content"
-      width="100%"
-      height="100%"
-      viewBox="-1 -1 102 102"
-    >
-      <path
-        d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-        style={{
-          transition: "stroke-dashoffset 10ms linear 0s",
-          strokeDasharray: "307.919, 307.919",
-          strokeDashoffset: "270.456"
-        }}
-      />
-    </svg>
-  </div>
+
   {/*==================================================*/}
   {/* Start scrollup section Section */}
   {/*==================================================*/}

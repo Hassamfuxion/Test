@@ -2,76 +2,92 @@ export default function HeroSection() {
   return (
     <div
       style={{
-        width: '100%',
-        height: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        textAlign: 'center',
-        position: 'relative',
-        overflow: 'hidden',
+        width: "100%",
+        height: "100vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        flexDirection: "column",
+        textAlign: "center",
+        position: "relative",
+        overflow: "hidden",
         background: `url("/assets/images/resource/Hero2.jpg") no-repeat center center/cover`,
-        animation: 'moveBackground 30s linear infinite', // Smooth background motion
-        fontFamily: "'Poppins', sans-serif", // Apply Poppins font globally
       }}
     >
-      {/* Sparkles Effect */}
-      <div className="sparkles" style={{
-        position: 'absolute',
-        top: '0',
-        left: '0',
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-        zIndex: '1',
-      }}></div>
-
-      {/* Dark Overlay Effect */}
+      {/* Black Gradient Overlay */}
       <div
         style={{
-          position: 'absolute',
-          width: '100%',
-          height: '100%',
-          top: '0',
-          left: '0',
-          background: 'rgba(0, 0, 0, 0.5)', // Dark overlay effect
-          zIndex: '2',
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+          height: "30%", // Adjust height as needed
+          background: "linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent)",
+          zIndex: "2",
         }}
       ></div>
 
-      {/* Black Gradient Overlay at the Bottom */}
+      {/* Star Layer */}
       <div
         style={{
-          position: 'absolute',
-          width: '100%',
-          height: '40%', // Adjust height for the intensity of the effect
-          bottom: '0',
-          left: '0',
-          background: 'linear-gradient(to top, black 30%, rgba(0,0,0,0) 100%)',
-          zIndex: '2',
+          position: "absolute",
+          top: 0,
+          left: 0,
+          width: "100%",
+          height: "100%",
+          pointerEvents: "none",
         }}
-      ></div>
+      >
+        {[...Array(150)].map((_, i) => {
+          const size = Math.random() * 2.5 + 1;
+          const x = Math.random() * 100;
+          const y = Math.random() * 100;
+          const delay = Math.random() * 3;
+          const duration = 2 + Math.random() * 2;
+
+          return (
+            <div
+              key={i}
+              className="star"
+              style={{
+                position: "absolute",
+                top: `${y}vh`,
+                left: `${x}vw`,
+                width: `${size}px`,
+                height: `${size}px`,
+                background: "rgba(255, 255, 255, 0.9)",
+                borderRadius: "50%",
+                boxShadow: `0 0 ${size * 4}px rgba(255, 255, 255, 0.8)`,
+                animation: `glow ${duration}s infinite alternate ease-in-out ${delay}s`,
+              }}
+            />
+          );
+        })}
+      </div>
 
       {/* Hero Content */}
       <h1
         style={{
-          fontSize: '3rem',
-          fontWeight: 'bold',
-          maxWidth: '800px',
-          color: '#fff',
-          zIndex: '3', // Ensure content is above other layers
+          fontSize: "3rem",
+          fontWeight: "bold",
+          maxWidth: "800px",
+          color: "#fff",
+          textShadow: "0 0 15px rgba(255,255,255,0.5)",
+          zIndex: "3",
+          padding: "0 20px",
         }}
       >
         Transforming Ideas into Reality
       </h1>
       <p
         style={{
-          fontSize: '1.2rem',
-          marginTop: '10px',
-          maxWidth: '600px',
-          color: '#fff',
-          zIndex: '3', // Ensure content is above other layers
+          fontSize: "1.2rem",
+          marginTop: "10px",
+          maxWidth: "600px",
+          color: "#fff",
+          textShadow: "0 0 10px rgba(255,255,255,0.5)",
+          zIndex: "3",
+          padding: "0 15px",
         }}
       >
         Empowering your industry with Tailored Solutions
@@ -79,57 +95,10 @@ export default function HeroSection() {
 
       <style>
         {`
-          @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-          @keyframes moveBackground {
-            0% {
-              background-position: 0 0;
-            }
-            50% {
-              background-position: 50% 50%;
-            }
-            100% {
-              background-position: 0 0;
-            }
-          }
-
-          /* Sparkles (Stars) Effect */
-          .sparkles::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: transparent;
-            z-index: 1;
-            pointer-events: none;
-            animation: sparkleAnim 5s infinite ease-in-out;
-          }
-
-          /* Fewer stars, less glow */
-          .sparkles::before {
-            background: radial-gradient(circle, rgba(173, 216, 230, 0.6) 2px, rgba(173, 216, 230, 0) 2px);
-            background-size: 30px 30px;
-            animation: sparkleAnim 5s infinite ease-in-out;
-          }
-
-          /* Subtle glow and fade effect */
-          @keyframes sparkleAnim {
-            0% {
-              opacity: 0.2;
-            }
-            30% {
-              opacity: 0.4;
-            }
-            100% {
-              opacity: 0.2;
-            }
-          }
-
-          /* Apply Poppins font globally */
-          * {
-            font-family: 'Poppins', sans-serif;
+          @keyframes glow {
+            0% { opacity: 0.4; transform: scale(1); }
+            50% { opacity: 1; transform: scale(1.1); }
+            100% { opacity: 0.4; transform: scale(1); }
           }
         `}
       </style>

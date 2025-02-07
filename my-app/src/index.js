@@ -3,7 +3,7 @@ import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom"; // Import RouterProvider
 import { router } from "./Routes/Routes";  // Import the router config
 import App from "./App";  // Main app component
-
+import Chatbot from "./chatbot";
 
 const rootElement = document.getElementById("root");
 
