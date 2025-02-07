@@ -615,7 +615,7 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Start dexon About Section  */}
   {/*==================================================*/}
-  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)' }}>
+  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)', padding: '20px' }}>
   <div className="container">
     <div className="row about-bg">
       <div className="col-lg-6">
@@ -671,7 +671,7 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Follow us Start */}
   {/*==================================================*/}
-  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)' }}>
+  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)' ,padding: '20px' }}>
     <div className="container">
         <div className="row about-bg">
         
