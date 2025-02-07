@@ -790,7 +790,7 @@ const SSConsultant = () => {
     </ul>
   </div>
   <div className="about-people">
-    <a href="./Contact">
+    <a href="https://fuxioncreatives.com/" target="_blank">
       <button className="shadow__btn">Work With Us</button>
     </a>
   </div>
