@@ -407,7 +407,7 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Start dexon Feature Section  */}
   {/*==================================================*/}
-  <div className="feature-section style-two" style={{ background: 'linear-gradient(to right, blue, black)' }}>
+  <div className="feature-section style-two" style={{ background: 'linear-gradient(to right, blue, black)', }}>
   <div className="container">
     <div className="row dream-bg">
       <div className="col-lg-12">
@@ -428,9 +428,9 @@ const SSConsultant = () => {
       </div>
     </div>
 
-    <div className="row">
+    <div className="row" style={{padding: '20px' }}>
 
-    <div className="col-lg-4 col-md-6">
+    <div className="col-lg-4 col-md-6" >
   <a 
     href="./financemanagement" 
     style={{ textDecoration: 'none', color: 'inherit', display: 'block' }}
@@ -671,7 +671,7 @@ const SSConsultant = () => {
   {/*==================================================*/}
   {/* Follow us Start */}
   {/*==================================================*/}
-  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)' ,padding: '20px' }}>
+  <div className="about-section" style={{ background: 'linear-gradient(to right, blue, black)',padding: '20px' }}>
     <div className="container">
         <div className="row about-bg">
         
@@ -766,14 +766,14 @@ const SSConsultant = () => {
             </div>
           </div>
           <div className="col-lg-6">
-  <div className="dexon-section-title white">
+  <div className="dexon-section-title white" style={{ padding: '20px' }}>
     <h4>About FuxionCreatives</h4>
     <h1>Innovative Design & Digital Solutions</h1>
     <p style={{ color: 'white', fontSize: '14px' }}>
       At FuxionCreatives, we specialize in crafting unique brand identities, web solutions, and digital strategies to elevate your business.
     </p>
   </div>
-  <div className="about-item-list">
+  <div className="about-item-list"  style={{ padding: '20px' }}>
     <ul>
       <li>
         <i className="bi bi-check2-all" /> Logo Design – Crafting impactful brand identities
@@ -789,7 +789,7 @@ const SSConsultant = () => {
       </li>
     </ul>
   </div>
-  <div className="about-people">
+  <div className="about-people" style={{ padding: '20px' }}>
     <a href="https://fuxioncreatives.com/" target="_blank">
       <button className="shadow__btn">Work With Us</button>
     </a>
