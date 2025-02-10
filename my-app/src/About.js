@@ -157,7 +157,7 @@ const SSConsultant2 = () => {
       </div>
       <div className="col-lg-6">
       <div className="row">
-  <div className="about-testi-scroll">
+  <div className="about-testi-scroll" >
     <div className="about-scroll">
       {[
         {
@@ -196,8 +196,9 @@ const SSConsultant2 = () => {
           rating: 5
         }
       ].map((item, index) => (
-        <div className="col-lg-12" key={index}>
-          <div className="testimonial-single-box2">
+        <div className="col-lg-12" key={index} >
+      <div className="testimonial-single-box2" >
+
             <div className="testi-people">
               <img src={item.image} alt={item.title} />
             </div>
@@ -318,7 +319,7 @@ const SSConsultant2 = () => {
 
     <div className="row">
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif25.gif" alt="" />
           </div>
@@ -334,7 +335,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif26.gif" alt="" />
           </div>
@@ -350,7 +351,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif29.gif" alt="" />
           </div>
@@ -366,7 +367,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif28.gif" alt="" />
           </div>
@@ -382,7 +383,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif30.gif" alt="" />
           </div>
@@ -398,7 +399,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif31.gif" alt="" />
           </div>
@@ -414,7 +415,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif32.gif" alt="" />
           </div>
@@ -430,7 +431,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif33.gif" alt="" />
           </div>
@@ -446,7 +447,7 @@ const SSConsultant2 = () => {
       </div>
 
       <div className="col-lg-4 col-md-6">
-        <div className="feature-single-box">
+        <div className="feature-single-box" style={{ height: "350px" }}>
           <div className="feature-icon">
             <img src="assets/images/resource/icongif34.gif" alt="" />
           </div>
