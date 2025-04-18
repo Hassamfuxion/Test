@@ -54,7 +54,7 @@ const SSConsultant3 = () => {
      <Helmet>
         <meta charset="UTF-8" />
         <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <title>SSCONSULTANT</title>
+        <title>SS Consultant - Software Solution & Consultancy</title>
         <meta name="description" content="" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         {/* Favicon */}
