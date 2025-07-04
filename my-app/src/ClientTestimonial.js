@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 // Updated array with 12 images dynamically generated
-const partners = Array.from({ length: 12 }, (_, index) => 
+const partners = Array.from({ length: 13 }, (_, index) => 
     `assets/new logo/new-logo-${String(index + 1).padStart(2, '0')}.png`
 );
 
