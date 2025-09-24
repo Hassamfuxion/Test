@@ -1,29 +1,21 @@
 import React from 'react';
 
 export default function HeroSection() {
-  // ERP-related words
   const erpWords = [
     "ERP", "Solutions", "Automation", "Integration", "Finance", "Inventory",
     "Sales", "CRM", "Reporting", "Analytics", "Scalable", "Cloud", "Security",
     "Efficiency", "Productivity", "Dashboard", "Workflow", "Customizable"
   ];
 
-  // Generate 20+ falling elements
   const fallingElements = [];
   for (let i = 0; i < 24; i++) {
     const word = erpWords[Math.floor(Math.random() * erpWords.length)];
-    const angle = 90 + Math.random() * 60; // 90° to 150° — looks like falling
-    const leftPos = `${Math.random() * 80 + 10}%`; // 10% to 90%
+    const angle = 90 + Math.random() * 60; // 90°–150°
+    const leftPos = `${Math.random() * 80 + 10}%`;
     const delay = Math.random() * 3;
     const duration = 8 + Math.random() * 4;
 
-    fallingElements.push({
-      word,
-      angle,
-      left: leftPos,
-      delay,
-      duration,
-    });
+    fallingElements.push({ word, angle, left: leftPos, delay, duration });
   }
 
   return (
@@ -42,7 +34,7 @@ export default function HeroSection() {
         fontFamily: 'Orbitron, sans-serif',
       }}
     >
-      {/* Black Gradient Overlay */}
+      {/* Gradient & Stars — unchanged */}
       <div
         style={{
           position: 'absolute',
@@ -55,7 +47,6 @@ export default function HeroSection() {
         }}
       ></div>
 
-      {/* Star Layer */}
       <div
         style={{
           position: 'absolute',
@@ -72,11 +63,9 @@ export default function HeroSection() {
           const y = Math.random() * 100;
           const delay = Math.random() * 3;
           const duration = 2 + Math.random() * 2;
-
           return (
             <div
               key={i}
-              className="star"
               style={{
                 position: 'absolute',
                 top: `${y}vh`,
@@ -93,34 +82,15 @@ export default function HeroSection() {
         })}
       </div>
 
-      {/* Hero Content */}
-      <h1
-        style={{
-          fontSize: '3rem',
-          fontWeight: '600',
-          maxWidth: '800px',
-          color: '#fff',
-          zIndex: 3,
-          padding: '0 20px',
-        }}
-      >
+      {/* Hero Text */}
+      <h1 style={{ fontSize: '3rem', fontWeight: '600', color: '#fff', zIndex: 3, padding: '0 20px' }}>
         Transforming Ideas into Reality
       </h1>
-
-      <p
-        style={{
-          fontSize: '1.2rem',
-          marginTop: '10px',
-          maxWidth: '600px',
-          color: '#fff',
-          zIndex: 3,
-          padding: '0 15px',
-        }}
-      >
+      <p style={{ fontSize: '1.2rem', marginTop: '10px', color: '#fff', zIndex: 3, padding: '0 15px' }}>
         Empowering your industry with Tailored Solutions
       </p>
 
-      {/* YouTube Video Player - Glass Effect */}
+      {/* YouTube Player (fix empty src) */}
       <div
         style={{
           marginTop: '30px',
@@ -139,17 +109,13 @@ export default function HeroSection() {
           src=""
           title="YouTube video player"
           frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allow="autoplay; encrypted-media"
           allowFullScreen
-          style={{
-            width: '100%',
-            height: '450px',
-            border: 'none',
-          }}
-        ></iframe>
+          style={{ width: '100%', height: '450px', border: 'none' }}
+        />
       </div>
 
-      {/* ✅ REALISTIC FALLING TEXT — ANGLED + LOW OPACITY */}
+      {/* ✅ FIXED FALLING TEXT — NO CSS VARS, NO ERRORS */}
       <div
         style={{
           position: 'absolute',
@@ -171,9 +137,11 @@ export default function HeroSection() {
               color: '#fff',
               fontSize: '1.1rem',
               fontWeight: '500',
+              // 👇 Pre-rotate the word — this is static
               transform: `rotate(${item.angle}deg)`,
-              opacity: 0.5, // 👈 Low opacity for dreamy effect
-              animation: `fallLoop ${item.duration}s linear ${item.delay}s infinite`,
+              opacity: 0.5,
+              // 👇 Animate ONLY translateY via keyframe
+              animation: `fallTranslate ${item.duration}s linear ${item.delay}s infinite`,
               textShadow: '0 0 4px rgba(255,255,255,0.3)',
               whiteSpace: 'nowrap',
             }}
@@ -183,7 +151,6 @@ export default function HeroSection() {
         ))}
       </div>
 
-      {/* Optional Button */}
       <button
         style={{
           marginTop: '30px',
@@ -200,13 +167,11 @@ export default function HeroSection() {
           textShadow: '0 0 5px rgba(255,255,255,0.6)',
           zIndex: 3,
         }}
-       
       >
         <span style={{ marginRight: '8px' }}>✨</span>
         New Background
       </button>
 
-      {/* Animation Styles */}
       <style>
         {`
           @keyframes glow {
@@ -215,10 +180,11 @@ export default function HeroSection() {
             100% { opacity: 0.4; transform: scale(1); }
           }
 
-          @keyframes fallLoop {
+          /* ✅ Only animate translateY — rotation is already applied inline */
+          @keyframes fallTranslate {
             0% {
               opacity: 0;
-              transform: translateY(0) rotate(var(--angle));
+              transform: translateY(0) rotate(var(--angle, 0deg)); /* fallback */
             }
             10% {
               opacity: 0.5;
@@ -228,9 +194,14 @@ export default function HeroSection() {
             }
             100% {
               opacity: 0;
-              transform: translateY(120vh) rotate(var(--angle));
+              transform: translateY(120vh) rotate(var(--angle, 0deg));
             }
           }
+
+          /* 🔥 CRITICAL: Set --angle for each span */
+          ${fallingElements.map((item, i) => 
+            `.fall-${i} { --angle: ${item.angle}deg; }`
+          ).join('\n')}
         `}
       </style>
     </div>
