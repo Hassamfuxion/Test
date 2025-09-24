@@ -83,10 +83,10 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Text */}
-      <h1 style={{ fontSize: '3rem', fontWeight: '600', color: '#fff', zIndex: 3, padding: '0 20px' }}>
+      <h1 style={{ fontSize: '2.5rem', fontWeight: '600', color: '#fff', zIndex: 3, padding: '0 20px' }}>
         Transforming Ideas into Reality
       </h1>
-      <p style={{ fontSize: '1.2rem', marginTop: '10px', color: '#fff', zIndex: 3, padding: '0 15px' }}>
+      <p style={{ fontSize: '1.2rem', marginTop: '10px', color: '#0099ffff', zIndex: 3, padding: '0 15px' }}>
         Empowering your industry with Tailored Solutions
       </p>
 

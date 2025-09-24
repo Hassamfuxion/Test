@@ -5,11 +5,12 @@ import styled from 'styled-components';
 
 export default function HeaderStyle({ variant }) {
   const [mobileToggle, setMobileToggle] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isSticky, setIsSticky] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
+      const currentScrollPos = window.scrollY;
+      setIsSticky(currentScrollPos > 50); // Add sticky class after 50px scroll
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -17,7 +18,7 @@ export default function HeaderStyle({ variant }) {
   }, []);
 
   return (
-    <StickyHeaderWrapper $scrolled={isScrolled}>
+    <StickyHeaderWrapper $isSticky={isSticky}>
       <header
         className={`cs_site_header header_style_2 cs_style_1 ${
           variant || ''
@@ -29,7 +30,13 @@ export default function HeaderStyle({ variant }) {
           <div className="container-fluid">
             <div className="cs_main_header_in">
               <div className="cs_main_header_left">
-                <Link to="/" className="cs_site_branding" style={{ textDecoration: 'none' }}>
+                <Link
+                  to="/"
+                  className="cs_site_branding"
+                  style={{
+                    textDecoration: 'none',
+                  }}
+                >
                   <video
                     src="/assets/images/animation logo.mp4"
                     width="220"
@@ -37,7 +44,11 @@ export default function HeaderStyle({ variant }) {
                     autoPlay
                     loop
                     muted
-                    style={{ width: '220px', height: '80px', display: 'block' }}
+                    style={{
+                      width: '220px',
+                      height: '80px',
+                      display: 'block',
+                    }}
                   />
                 </Link>
               </div>
@@ -75,79 +86,32 @@ export default function HeaderStyle({ variant }) {
   );
 }
 
-// ✨ Sticky wrapper with scroll-aware styling
+// Wrapper to handle sticky behavior + margin + radius
 const StickyHeaderWrapper = styled.div`
   position: sticky;
-  top: ${({ $scrolled }) => ($scrolled ? '16px' : '0')};
+  top: 16px; /* Top margin (adjust as needed) */
   z-index: 1000;
   margin: 0 auto;
-  max-width: ${({ $scrolled }) => ($scrolled ? 'calc(100% - 32px)' : '100%')};
-  border-radius: ${({ $scrolled }) => ($scrolled ? '16px' : '0')};
+  max-width: calc(100% - 32px); /* So it doesn't go edge-to-edge if you want padding */
+  border-radius: 16px; /* Rounded corners */
   overflow: hidden;
-  transition: all 0.3s ease;
 
   header {
     background-color: black;
     color: white;
     transition: all 0.3s ease;
-    box-shadow: ${({ $scrolled }) =>
-      $scrolled ? '0 4px 20px rgba(0, 0, 0, 0.4)' : 'none'};
+    box-shadow: ${({ $isSticky }) =>
+      $isSticky ? '0 4px 12px rgba(0,0,0,0.3)' : 'none'};
   }
 
-  /* 🔥 Mobile: enforce black background everywhere */
   @media (max-width: 768px) {
-    top: ${({ $scrolled }) => ($scrolled ? '12px' : '0')};
-    max-width: ${({ $scrolled }) => ($scrolled ? 'calc(100% - 24px)' : '100%')};
-    border-radius: ${({ $scrolled }) => ($scrolled ? '12px' : '0')};
-
-    header,
-    .cs_main_header,
-    .cs_main_header_in,
-    .cs_nav {
-      background-color: black !important;
-      color: white !important;
-    }
-
-    /* Ensure hamburger icon is visible */
-    .cs-munu_toggle {
-      background: transparent !important;
-      border: none !important;
-    }
-
-    .cs-munu_toggle span {
-      background-color: white !important;
-      display: block;
-      width: 24px;
-      height: 2px;
-      position: relative;
-    }
-
-    .cs-munu_toggle span::before,
-    .cs-munu_toggle span::after {
-      content: '';
-      position: absolute;
-      width: 24px;
-      height: 2px;
-      background-color: white;
-      left: 0;
-    }
-
-    .cs-munu_toggle span::before {
-      top: -6px;
-    }
-
-    .cs-munu_toggle span::after {
-      bottom: -6px;
-    }
-
-    /* Hide email button on mobile */
-    .cs_main_header_right {
-      display: none;
-    }
+    top: 8px;
+    max-width: calc(100% - 16px);
+    border-radius: 12px;
   }
 `;
 
-// Styled email button
+// Keep your existing StyledWrapper
 const StyledWrapper = styled.div`
   button {
     --light-blue: #b3d9f9;
