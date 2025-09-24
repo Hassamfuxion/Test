@@ -1,15 +1,16 @@
+// Nav.jsx
 import { useState } from 'react';
-import { Link } from 'react-router-dom';  // Use Link from react-router-dom
+import { Link } from 'react-router-dom';
 
 export default function Nav({ setMobileToggle }) {
   const [hovered, setHovered] = useState(null);
 
-  // Inline styles
   const linkStyle = {
     color: 'white',
     textDecoration: 'none',
     padding: '10px 15px',
     transition: 'color 0.3s ease',
+    backgroundColor: 'transparent', // 👈 Prevent background bleed
   };
 
   const hoveredStyle = {
@@ -17,11 +18,10 @@ export default function Nav({ setMobileToggle }) {
   };
 
   return (
-    
     <ul className="cs_nav_list fw-medium">
       <li>
         <Link
-          to="/"  // Fixed path for Home (root path)
+          to="/"
           onClick={() => setMobileToggle(false)}
           style={{ ...linkStyle, ...(hovered === 'home' ? hoveredStyle : {}) }}
           onMouseEnter={() => setHovered('home')}
@@ -32,7 +32,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li>
         <Link
-          to="/about"  // Correct path for About
+          to="/about"
           onClick={() => setMobileToggle(false)}
           style={{ ...linkStyle, ...(hovered === 'about' ? hoveredStyle : {}) }}
           onMouseEnter={() => setHovered('about')}
@@ -43,7 +43,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li>
         <Link
-          to="/service"  // Correct path for Services
+          to="/service"
           onClick={() => setMobileToggle(false)}
           style={{ ...linkStyle, ...(hovered === 'service' ? hoveredStyle : {}) }}
           onMouseEnter={() => setHovered('service')}
@@ -54,7 +54,7 @@ export default function Nav({ setMobileToggle }) {
       </li>
       <li>
         <Link
-          to="/contact"  // Correct path for Contact
+          to="/contact"
           onClick={() => setMobileToggle(false)}
           style={{ ...linkStyle, ...(hovered === 'contact' ? hoveredStyle : {}) }}
           onMouseEnter={() => setHovered('contact')}

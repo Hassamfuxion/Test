@@ -62,33 +62,7 @@ const SSConsultant = () => {
       </div>
       <Loader />;
    <header></header>
-     <Helmet>
-     
-        <meta charset="UTF-8" />
-        <meta httpEquiv="x-ua-compatible" content="ie=edge" />
-        <title>SS Consultant - Software Solution & Consultancy</title>
-        <meta name="description" content="" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        {/* Favicon */}
-        <link rel="icon" type="image/png" sizes="56x56" href="assets/images/favicon.png" />
-        {/* Bootstrap CSS */}
-        <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css" media="all" />
-        {/* Carousel CSS */}
-        <link rel="stylesheet" href="assets/css/owl.carousel.min.css" type="text/css" media="all" />
-        {/* Other CSS files */}
-        <link rel="stylesheet" href="assets/css/animate.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/animated-text.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/all.min.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/flaticon.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/theme-default.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/meanmenu.min.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/owl.transitions.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="venobox/venobox.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/bootstrap-icons.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/style.css" type="text/css" media="all" />
-        <link rel="stylesheet" href="assets/css/responsive.css" type="text/css" media="all" />
-        <link href="https://fonts.cdnfonts.com/css/clash-display" rel="stylesheet" />
-      </Helmet>
+    
   
       <main>
       <SplineComponent />
