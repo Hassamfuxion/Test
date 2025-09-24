@@ -1,20 +1,30 @@
 import React from 'react';
 
 export default function HeroSection() {
-  const curvedSentence = [
-    { word: "React", angle: -15 },
-    { word: "Bits", angle: -10 },
-    { word: "is", angle: -5 },
-    { word: "too", angle: 0 },
-    { word: "library", angle: 5 },
-    { word: "of", angle: 10 },
-    { word: "animated", angle: 15 },
-    { word: "and", angle: 20 },
-    { word: "interactive", angle: 25 },
-    { word: "React", angle: 30 },
-    { word: "components", angle: 35 },
-    { word: "designed", angle: 40 },
+  // ERP-related words
+  const erpWords = [
+    "ERP", "Solutions", "Automation", "Integration", "Finance", "Inventory",
+    "Sales", "CRM", "Reporting", "Analytics", "Scalable", "Cloud", "Security",
+    "Efficiency", "Productivity", "Dashboard", "Workflow", "Customizable"
   ];
+
+  // Generate 20+ falling elements
+  const fallingElements = [];
+  for (let i = 0; i < 24; i++) {
+    const word = erpWords[Math.floor(Math.random() * erpWords.length)];
+    const angle = 90 + Math.random() * 60; // 90° to 150° — looks like falling
+    const leftPos = `${Math.random() * 80 + 10}%`; // 10% to 90%
+    const delay = Math.random() * 3;
+    const duration = 8 + Math.random() * 4;
+
+    fallingElements.push({
+      word,
+      angle,
+      left: leftPos,
+      delay,
+      duration,
+    });
+  }
 
   return (
     <div
@@ -32,7 +42,7 @@ export default function HeroSection() {
         fontFamily: 'Orbitron, sans-serif',
       }}
     >
-      {/* Gradient & Stars — unchanged */}
+      {/* Black Gradient Overlay */}
       <div
         style={{
           position: 'absolute',
@@ -45,6 +55,7 @@ export default function HeroSection() {
         }}
       ></div>
 
+      {/* Star Layer */}
       <div
         style={{
           position: 'absolute',
@@ -61,9 +72,11 @@ export default function HeroSection() {
           const y = Math.random() * 100;
           const delay = Math.random() * 3;
           const duration = 2 + Math.random() * 2;
+
           return (
             <div
               key={i}
+              className="star"
               style={{
                 position: 'absolute',
                 top: `${y}vh`,
@@ -80,7 +93,7 @@ export default function HeroSection() {
         })}
       </div>
 
-      {/* Hero Text */}
+      {/* Hero Content */}
       <h1
         style={{
           fontSize: '3rem',
@@ -107,7 +120,7 @@ export default function HeroSection() {
         Empowering your industry with Tailored Solutions
       </p>
 
-      {/* YouTube Player */}
+      {/* YouTube Video Player - Glass Effect */}
       <div
         style={{
           marginTop: '30px',
@@ -123,16 +136,20 @@ export default function HeroSection() {
         }}
       >
         <iframe
-          src="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1&mute=1&loop=1&playlist=dQw4w9WgXcQ&controls=0&showinfo=0&rel=0&modestbranding=1"
+          src=""
           title="YouTube video player"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
-          style={{ width: '100%', height: '450px', border: 'none' }}
+          style={{
+            width: '100%',
+            height: '450px',
+            border: 'none',
+          }}
         ></iframe>
       </div>
 
-      {/* ✅ REAL FALLING TEXT — FROM TOP TO BOTTOM */}
+      {/* ✅ REALISTIC FALLING TEXT — ANGLED + LOW OPACITY */}
       <div
         style={{
           position: 'absolute',
@@ -144,34 +161,29 @@ export default function HeroSection() {
           zIndex: 1,
         }}
       >
-        {curvedSentence.map((item, i) => {
-          const delay = i * 0.2; // stagger
-          const leftPos = 20 + (i * 7); // spread horizontally (20% to ~90%)
-          return (
-            <span
-              key={i}
-              style={{
-                position: 'absolute',
-                top: '-50px',
-                left: `${Math.min(leftPos, 90)}%`,
-                color: i % 2 === 0 ? '#fff' : '#00f0ff',
-                fontSize: '1.1rem',
-                fontWeight: '500',
-                whiteSpace: 'nowrap',
-                opacity: 0,
-                // Pass angle via CSS variable
-                '--angle': `${item.angle}deg`,
-                animation: `fallToBottom 2.5s ease-out ${delay}s forwards`,
-                textShadow: '0 0 4px rgba(255,255,255,0.6)',
-              }}
-            >
-              {item.word}
-            </span>
-          );
-        })}
+        {fallingElements.map((item, i) => (
+          <span
+            key={i}
+            style={{
+              position: 'absolute',
+              top: '-50px',
+              left: item.left,
+              color: '#fff',
+              fontSize: '1.1rem',
+              fontWeight: '500',
+              transform: `rotate(${item.angle}deg)`,
+              opacity: 0.5, // 👈 Low opacity for dreamy effect
+              animation: `fallLoop ${item.duration}s linear ${item.delay}s infinite`,
+              textShadow: '0 0 4px rgba(255,255,255,0.3)',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {item.word}
+          </span>
+        ))}
       </div>
 
-      {/* Button */}
+      {/* Optional Button */}
       <button
         style={{
           marginTop: '30px',
@@ -188,20 +200,13 @@ export default function HeroSection() {
           textShadow: '0 0 5px rgba(255,255,255,0.6)',
           zIndex: 3,
         }}
-        onMouseEnter={(e) => {
-          e.target.style.backgroundColor = 'rgba(255,255,255,0.2)';
-          e.target.style.transform = 'scale(1.05)';
-        }}
-        onMouseLeave={(e) => {
-          e.target.style.backgroundColor = 'rgba(255,255,255,0.1)';
-          e.target.style.transform = 'scale(1)';
-        }}
+       
       >
         <span style={{ marginRight: '8px' }}>✨</span>
         New Background
       </button>
 
-      {/* Animations */}
+      {/* Animation Styles */}
       <style>
         {`
           @keyframes glow {
@@ -210,17 +215,20 @@ export default function HeroSection() {
             100% { opacity: 0.4; transform: scale(1); }
           }
 
-          @keyframes fallToBottom {
+          @keyframes fallLoop {
             0% {
               opacity: 0;
-              transform: translateY(0) rotate(0deg);
+              transform: translateY(0) rotate(var(--angle));
             }
-            30% {
-              opacity: 1;
+            10% {
+              opacity: 0.5;
+            }
+            90% {
+              opacity: 0.5;
             }
             100% {
-              opacity: 1;
-              transform: translateY(65vh) rotate(var(--angle));
+              opacity: 0;
+              transform: translateY(120vh) rotate(var(--angle));
             }
           }
         `}
