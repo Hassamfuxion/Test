@@ -29,6 +29,7 @@ export default function HeaderStyle({ variant }) {
         <div className="cs_main_header">
           <div className="container-fluid">
             <div className="cs_main_header_in">
+              {/* Left: Logo */}
               <div className="cs_main_header_left">
                 <Link
                   to="/"
@@ -37,21 +38,20 @@ export default function HeaderStyle({ variant }) {
                     textDecoration: 'none',
                   }}
                 >
-                  <video
-                    src="/assets/images/animation logo.mp4"
-                    width="220"
-                    height="80"
-                    autoPlay
-                    loop
-                    muted
+                  <img
+                    src="https://github.com/Hassam990/synapse/blob/main/animationlogo-ezgif.com-cut.gif?raw=true"
+                    alt="SS Consultant Logo"
                     style={{
                       width: '220px',
                       height: '80px',
+                      objectFit: 'contain',
                       display: 'block',
                     }}
                   />
                 </Link>
               </div>
+
+              {/* Center: Nav */}
               <div className="cs_main_header_center">
                 <div className="cs_nav cs_primary_font fw-medium">
                   <span
@@ -67,6 +67,8 @@ export default function HeaderStyle({ variant }) {
                   <Nav setMobileToggle={setMobileToggle} />
                 </div>
               </div>
+
+              {/* Right: Button */}
               <div className="cs_main_header_right">
                 <StyledWrapper>
                   <button
