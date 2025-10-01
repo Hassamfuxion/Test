@@ -44,8 +44,8 @@ const Services = () => {
 const ServicesContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  padding: 50px 20px;
+  gap: 24px;
+  padding: 40px 20px;
   justify-items: center;
 
   @media (max-width: 1024px) {
@@ -54,13 +54,18 @@ const ServicesContainer = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 30px 16px;
   }
 `;
 
 const ServiceCard = styled.div`
+  width: 100%;
+  max-width: 380px;
+
   .outer {
-    width: 380px;
-    height: 470px;
+    width: 100%;
+    aspect-ratio: 380 / 470; /* Maintain aspect ratio */
     border-radius: 20px;
     padding: 1px;
     background: radial-gradient(circle 230px at 0% 0%, #ffffff, #0c0d0d);
@@ -109,7 +114,6 @@ const ServiceCard = styled.div`
     height: 100%;
     border-radius: 15px;
     border: solid 1px #202222;
-    background-size: 20px 20px;
     background: radial-gradient(circle 280px at 0% 0%, rgb(36, 76, 252), rgb(2, 4, 8));
     display: flex;
     align-items: center;
@@ -117,23 +121,33 @@ const ServiceCard = styled.div`
     position: relative;
     flex-direction: column;
     color: #fff;
-    padding: 30px;
-    padding-top: 100px;
+    padding: 24px;
+    padding-top: 80px;
+
+    @media (max-width: 768px) {
+      padding: 20px;
+      padding-top: 70px;
+    }
   }
 
   .ray {
-    width: 220px;
-    height: 45px;
+    width: 180px;
+    height: 40px;
     border-radius: 100px;
     position: absolute;
     background-color: rgb(199, 199, 199);
     opacity: 0.4;
-    box-shadow: 0 0 50px #fff;
-    filter: blur(10px);
+    box-shadow: 0 0 40px #fff;
+    filter: blur(8px);
     transform-origin: 10%;
-    top: 0%;
+    top: 0;
     left: 0;
     transform: rotate(40deg);
+
+    @media (max-width: 768px) {
+      width: 140px;
+      height: 30px;
+    }
   }
 
   .service-content {
@@ -142,17 +156,21 @@ const ServiceCard = styled.div`
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 20px;
+    padding: 16px 0;
   }
 
   .service-icon {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 20px;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+
+    @media (max-width: 768px) {
+      width: 100px;
+      height: 100px;
+    }
   }
 
   .service-icon img {
@@ -162,16 +180,25 @@ const ServiceCard = styled.div`
   }
 
   .text {
-    font-weight: bolder;
-    font-size: 1.8rem;
+    font-size: 1.25rem;
     color: #fff;
-    padding: 10px 0;
+    padding: 8px 0;
+    font-weight: 600;
+
+    @media (max-width: 768px) {
+      font-size: 1.1rem;
+    }
   }
 
   .desc {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: #ccc;
-    padding: 10px 0;
+    padding: 8px 0;
+    line-height: 1.4;
+
+    @media (max-width: 768px) {
+      font-size: 0.8rem;
+    }
   }
 
   .line {
