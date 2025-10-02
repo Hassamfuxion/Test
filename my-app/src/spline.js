@@ -10,7 +10,7 @@ export default function HeroVideo() {
       }}
     >
       <iframe
-        src="https://player.vimeo.com/video/1123874672?badge=0&autopause=0&player_id=0&app_id=58479"
+        src="https://player.vimeo.com/video/1123874672?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&muted=0&loop=1"
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
