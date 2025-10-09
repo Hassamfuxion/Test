@@ -576,8 +576,8 @@ const SSConsultant2 = () => {
           <img src="assets/images/resource/team.png" alt="Team Member 1" />
         </div>
         <div className="team-content">
-          <h3 className="team-title" style={{ color: "white" }}> Ayesha Tariq </h3>
-          <p className="team-text" style={{ color: "white" }}> CEO &amp; Founder </p>
+          <h3 className="team-title" style={{ color: "white" }}> Muhammad A. Saleem </h3>
+          <p className="team-text" style={{ color: "white" }}> Chief &amp; Executive Officer </p>
         </div>
       </div>
     </div>
@@ -587,8 +587,8 @@ const SSConsultant2 = () => {
           <img src="assets/images/resource/team2.png" alt="Team Member 2" />
         </div>
         <div className="team-content">
-          <h3 className="team-title" style={{ color: "white" }}> Omar Khan </h3>
-          <p className="team-text" style={{ color: "white" }}> Operations Manager </p>
+          <h3 className="team-title" style={{ color: "white" }}> Muhammad Ahmer </h3>
+          <p className="team-text" style={{ color: "white" }}> Database Administrator </p>
         </div>
       </div>
     </div>
