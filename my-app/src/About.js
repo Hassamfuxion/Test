@@ -598,8 +598,8 @@ const SSConsultant2 = () => {
           <img src="assets/images/resource/team3.png" alt="Team Member 3" />
         </div>
         <div className="team-content">
-          <h3 className="team-title" style={{ color: "white" }}> Maria Ahmed </h3>
-          <p className="team-text" style={{ color: "white" }}> Marketing Strategist </p>
+          <h3 className="team-title" style={{ color: "white" }}> Muhammad Azhar </h3>
+          <p className="team-text" style={{ color: "white" }}> Technical Head </p>
         </div>
       </div>
     </div>
