@@ -16,7 +16,7 @@ export default function HeroVideo() {
   return (
     <div
       style={{
-        padding: "56.25% 0 0 0",
+        padding: "56.25% 0 0 0", // 16:9 ratio
         position: "relative",
         borderRadius: "16px",
         overflow: "hidden",
@@ -24,7 +24,7 @@ export default function HeroVideo() {
       }}
     >
       <iframe
-        src="https://player.vimeo.com/video/1125935234?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=0"
+        src="https://player.vimeo.com/video/1127599039?badge=0&autopause=0&player_id=0&app_id=58479&autoplay=1&loop=1&muted=0"
         frameBorder="0"
         allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
         referrerPolicy="strict-origin-when-cross-origin"
@@ -35,7 +35,7 @@ export default function HeroVideo() {
           width: "100%",
           height: "100%",
         }}
-        title="FULL FINAL"
+        title="Logo Fixed Video"
       ></iframe>
     </div>
   );
