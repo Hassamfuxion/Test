@@ -61,15 +61,7 @@ const Choose = () => {
 						<h1 className="sections">SSCONSULTANT</h1>
 					</div>	
 				</div>
-				<div className="col-lg-4">
-					<div className="rs-video text-right">
-						<div className="animate-border" onClick={handelClick}>
-							<span className="video-vemo-icon venobox vbox-item" data-vbtype="youtube" data-autoplay="true" >
-							<i className="bi bi-play"></i></span>
-							<span className="video-title" style={{  color: 'white', }} >Watch Video</span>
-						</div>
-					</div>
-				</div>
+		
 			</div>
 			<div className="row">
 				<div className="col-lg-6 col-md-6">
